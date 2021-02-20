@@ -25,7 +25,7 @@ class Body extends React.Component {
                 <Route path='/main_page/services/vet_help' component={VetHelp}/>
                 <Route path='/main_page/favorites' component={Favorites}/>
                 <Route path='/main_page/profile' component={Profile}/>
-               {/* <Route component={Home}/>*/}
+                <Route component={Home}/>
             </Switch>
         )
     }
