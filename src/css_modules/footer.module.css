@@ -1,0 +1,66 @@
+footer > div {
+    margin-top: 1.3em;
+}
+
+footer > div > h4 {
+    color: rgb(250, 132, 53);
+    text-shadow: 0.2em 0.1em 0.3em lightgray;
+}
+
+footer ul {
+    list-style: none;
+    text-shadow: 0.2em 0.1em 0.3em lightgray;
+}
+
+footer ul > li::before {
+    content: "\2022";
+    color: rgb(250, 132, 53);
+    text-shadow: 0.2em 0.1em 0.3em lightgray;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.5em;
+}
+
+footer > div h5 {
+    color: rgb(255, 94, 102);
+    text-shadow: 0.2em 0.1em 0.3em lightpink;
+    margin-left: 1em;
+    padding-left: 1em;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.coming {
+    background-color: rgb(255, 94, 102);
+    top: 0;
+    left: 0;
+    height: 70px;
+    box-shadow: 0 -3px 6px #00000029;
+    display: flex;
+    align-items: center;
+}
+
+footer > div > h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: white;
+    padding-left: 1em;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+footer > div > h6 {
+    font-size: 0.9em;
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+footer > div img {
+    width: 4em;
+    height: 4em;
+}
+

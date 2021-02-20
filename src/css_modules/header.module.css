@@ -1,0 +1,35 @@
+.btn {
+    border: 7px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-color: white;
+    color: rgb(255, 192, 130);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 5px;
+}
+
+header button:hover {
+    border: 7px solid rgb(255, 192, 130);
+    background-color: rgb(255, 243, 200);
+}
+
+header button:active {
+    background-color: rgb(255, 250, 200);
+}
+
+header button:focus {
+    outline: none;          /*убирает черную рамку вокруг кнопки*/
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+header img {
+    display:flex;
+    justify-content: center; /*центрируем элемент по горизонтали */
+    align-items: center; /* и вертикали */
+    overflow: hidden; /* если элемент больше блока-родителя – обрезаем лишнее */
+}
+

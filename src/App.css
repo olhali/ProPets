@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+body {
+    background: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+    max-width: 1440px;
+    margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+    top: 0;
+    left: 0;
+    height: 70px;
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+    top: 0;
+    left: 0;
+    height: 295px;
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.start-modal .modal-content {
+    color: rgb(250, 155, 97);
+    font-weight: 700;
+    text-shadow: 0.2em 0.1em 0.3em rgb(250, 155, 97);
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-header, .modal-footer {
+    background-color: rgb(255, 243, 200);
+}
+
+.submit {
+    background-color: rgb(67, 170, 124);
+    border: 1px solid rgb(67, 150, 124);
+    color: white;
+}
+.submit:hover,
+.submit:active,
+.submit:focus {
+    background-color: rgb(67, 185, 124) !important;
+    border: 1px solid rgb(67, 185, 124) !important;
+}
+
+.modal-authorization {
+    margin-top: 0;
+    margin-left: -1.5em;
+    margin-right: -0.1em;
+}
+
+.btn-authorization:hover {
+    background-color: rgb(255, 136, 100);
+    border: 2px solid rgb(255, 136, 100);
+}
+
+.btn-authorization:active {
+    background-color: rgb(67, 170, 124);
+    border: 2px solid rgb(67, 150, 124);
+}
+
+.btn-authorization:focus {
+    outline: none;                                         /*убирает черную рамку вокруг кнопки*/
+    background-color: rgb(67, 170, 124) !important;        /*цвет кнопки после нажатия не изменяется*/
+    border: 2px solid rgb(67, 150, 124);
+}
+
+.row-authorization {
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-movement {
+    border: 2px solid rgb(255, 136, 100);
+    position: relative;
+    overflow: hidden;
+    background: rgb(250, 155, 97);
+    transition: box-shadow 0.3s, transform 0.3s;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-shadow: 0.2em 0.1em 0.3em lightgray;
+    width: 110%;
+    padding: 0.3em;
+}
+.btn-movement:hover,
+.btn-movement:active,
+.btn-movement:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+    color: #FFF;
+}
+.btn-movement:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.btn-movement:hover:before,
+.btn-movement:active:before,
+.btn-movement:focus:before {
+    left: 100%;
+}
+
+/*particle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+}*/
+
+.btn_animation:hover, .btn_animation:focus {
+    -webkit-animation: pulse 1.6s linear infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.text-typing
+{
+    width: 40em;
+    color:green;
+    font-size: 22px;
+    font-family: 'Courier', cursive;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+}
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+.pills {
+    background-color: pink;
+}
+
+/*.normal{
+    border: 2px solid red;
+}*/
+/*
+.active{
+    color: red;
+}*/
+
+/*div#navDivId .component{
+    background-color: red;
+}*/
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    background-color: rgb(67, 185, 124);
+    border: 2px solid rgb(67, 150, 124);
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
 }

@@ -1,0 +1,90 @@
+main h1 {
+    z-index:100;
+}
+
+main > div > img {
+    left: -1em;
+    top: 0.4em;
+}
+
+.welcome {
+    color: rgb(250, 155, 97);
+    font-weight: 700;
+    text-shadow: 0.2em 0.1em 0.3em rgb(250, 155, 97);
+}
+
+.span1 {
+    color: rgb(255, 94, 102);
+    text-shadow: 0.2em 0.1em 0.3em lightpink;
+}
+
+.btn1 {
+    margin-top: 0.5em;
+    background-color: rgb(255, 154, 124);
+    border: 7px solid rgb(255, 136, 100);
+    padding: 1em;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 0 50px 50px 0;
+    text-shadow: 0.2em 0.1em 0.3em lightgray;
+}
+
+.btn2 {
+    background-color: rgb(67, 170, 124);
+    border: 7px solid rgb(67, 150, 124);
+    padding: 1em;
+    margin: 4px 0;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 0 50px 50px 0;
+    text-shadow: 0.2em 0.1em 0.3em lightgray;
+    color: whitesmoke;
+}
+
+main button:hover {
+    border: 7px solid rgb(255, 192, 130);
+    background-color: rgb(255, 243, 200);
+    text-shadow: 0.2em 0.1em 0.3em lightgray;
+}
+
+main button:active {
+    background-color: rgb(255, 250, 200);
+}
+
+main button:focus {
+    outline: none;          /*убирает черную рамку вокруг кнопки*/
+}
+
+.span2 {
+    cursor: pointer;
+    color: rgb(67, 170, 124);
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.lost, .found {
+    float: right;
+}
+
+main > div h2 {
+    margin-top: 0.3em;
+    float: right;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(67, 170, 124);
+    text-shadow: 0.2em 0.1em 0.3em rgb(255, 192, 130);
+}
+
+.h5 {
+    color: rgb(250, 132, 53);
+    margin-top: 1.3em;
+    padding-left: 0;
+}

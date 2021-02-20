@@ -1,0 +1,123 @@
+.mainPage {
+    background-color: rgb(255, 243, 200);
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    font-weight: bold;
+    color: rgb(67, 170, 124);
+}
+
+/*.home{
+    background-color: lightseagreen;
+    height: 4.5em;
+}*/
+
+.homeImg {
+    margin-right: 1.5em;
+    width: 4em;
+}
+
+.divHeight {
+    height: 4em;
+    padding-top: 0.2em;
+    background-color: rgb(255, 203, 157);
+}
+
+.topImg {
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
+}
+
+.link {
+    background-color: rgb(255, 243, 200);
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    font-weight: bold;
+    color: rgb(67, 170, 124);
+}
+.link:hover {
+    background-color: rgb(67, 170, 124);
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    font-weight: 700;
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+.link:active {
+    background-color: rgb(67, 185, 124);
+    border: 2px solid rgb(255, 203, 157);
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    font-weight: 700;
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+.link:focus {
+    outline: none;                                         /*убирает черную рамку вокруг кнопки*/
+    background-color: rgb(67, 185, 124);        /*цвет кнопки после нажатия не изменяется*/
+    border: 2px solid rgb(67, 150, 124);
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+
+/*.service {
+    background-color: rgb(255, 243, 200);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
+    color: rgb(67, 170, 124);
+    font-weight: bold;
+}*/
+
+.serviceOptionsImg {
+    /*background-color: rgb(255, 227, 180);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;*/
+    float: left;
+    margin-right: 1.5em;
+    width: 4em;
+}
+.serviceOptionsTxt {
+    float: left;
+    margin-top: 1em;
+}
+
+.serviceLink {
+    background-color: rgb(255, 227, 180);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
+    font-weight: bold;
+    color: rgb(250, 155, 97);
+}
+.serviceLink:hover {
+    background-color: rgb(67, 170, 124);
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    font-weight: 700;
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+.serviceLink:active {
+    background-color: rgb(67, 185, 124);
+    border: 2px solid rgb(255, 203, 157);
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    font-weight: 700;
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+.serviceLink:focus {
+    outline: none;                                         /*убирает черную рамку вокруг кнопки*/
+    background-color: rgb(67, 185, 124);        /*цвет кнопки после нажатия не изменяется*/
+    border: 2px solid rgb(67, 150, 124);
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+
+.outImg {
+    color: rgb(250, 155, 97);
+    font-size: 4em;
+}
+
+.outTxt {
+    color: rgb(250, 155, 97);
+}
