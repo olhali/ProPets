@@ -11,7 +11,7 @@ class App extends React.Component {
             page: 'start_page'
         }
     }
-
+//hello from Constantine
     /*changePage = (page) => {
         this.setState({
             page: page
