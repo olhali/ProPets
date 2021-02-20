@@ -17,7 +17,7 @@ class Home extends React.Component {
                     <div className='row align-items-center'>
                         <Posts className='col-9 col-sm-9'/>
                         <div className='col-3 col-sm-3'>
-                            <img src={require(`../Images/Home-PNG-HD.png`)} alt=''/>
+                            <img src={require(`../Images/love-clipart-pets.png`)} alt=''/>
                         </div>
                     </div>
                 </div>
