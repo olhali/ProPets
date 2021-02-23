@@ -34,19 +34,25 @@ const Navigation = (props) => {
             <div className={style.divHeight}><img className={`col-12 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
             <Nav tabs vertical className={style.mainPage}>
                {/* <NavItem className={style.home}>*/}
-                <NavItem>
+                <NavItem onClick={(e) => {
+                    setCollapseOpen(false);
+                }}>
                     {/*<NavLink href="#" active>*/}
                        {/* <NavLink exact activeClassName="active" tag={Link} to='/main_page/home' className="normal">*/}
                     <NavLink tag={RRNavLink} to='/main_page/home' className={style.link}>
                         <img className={style.homeImg} src={require(`../Images/Home-Free-PNG-Image.png`)} alt='Home'/>Home
                     </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem onClick={(e) => {
+                    setCollapseOpen(false);
+                }}>
                     <NavLink tag={RRNavLink} to='/main_page/lost' className={style.link}>
                         <img className={style.homeImg} src={require(`../Images/pngwing.com.png`)} alt='Lost'/>Lost
                     </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem onClick={(e) => {
+                    setCollapseOpen(false);
+                }}>
                     <NavLink tag={RRNavLink} to='/main_page/found' className={style.link}>
                         <img className={style.homeImg} src={require(`../Images/pngwing.com (5).png`)} alt='Found'/>Found
                     </NavLink>
@@ -117,13 +123,17 @@ const Navigation = (props) => {
                     </Card>
                 </Collapse>
 
-                <NavItem>
+                <NavItem onClick={(e) => {
+                    setCollapseOpen(false);
+                }}>
                     <NavLink tag={RRNavLink} to='/main_page/favorites' className={style.link}>
                         <img className={style.homeImg} src={require(`../Images/PinClipart.com_paw-print-heart-clipart_5562238.png`)} alt='Favorites'/>Favorites
                     </NavLink>
                 </NavItem>
                 <DropdownItem divider/>
-                <NavItem>
+                <NavItem onClick={(e) => {
+                    setCollapseOpen(false);
+                }}>
                     <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>Profile</NavLink>
                 </NavItem>
                 <NavItem>
