@@ -88,7 +88,7 @@ const Navigation = (props) => {
                     </Collapse>
                 </Navbar>*/}
 
-                <Button color='link' className={style.link}
+                <Button color='link' className={style.linkService}
                         onClick={(e) => {
                             e.preventDefault();
                             setCollapseOpen(!collapseOpen);
