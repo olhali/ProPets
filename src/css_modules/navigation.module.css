@@ -126,4 +126,11 @@
 
 .outTxt {
     color: rgb(250, 155, 97);
+    margin-left: 1.5em;
+}
+
+.avatar {
+    margin-right: 1.5em;
+    width: 4em;
+    border-radius: 50%;
 }

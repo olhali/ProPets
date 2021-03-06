@@ -23,11 +23,12 @@ const Navigation = (props) => {
     const [collapsed, setCollapsed] = useState(true);
     const toggleNavbar = () => setCollapsed(!collapsed);*/
 
+    /* const [selectedStyle, setSelectedStyle] = useState('');*/
+
     const [collapseOpen, setCollapseOpen] = useState(false);
 
-   /* const [selectedStyle, setSelectedStyle] = useState('');*/
-
-
+    const [avatar, setAvatar] = useState(<img src='https://icons.veryicon.com/png/o/business/wms-purchase-sale-and-storage-background/customer-5.png' className={style.avatar} alt='Avatar'/>);
+    const [name, setName] = useState('Mystery person');
 
     return (
         <div id='navDivId' className='flex-container'>
@@ -134,7 +135,7 @@ const Navigation = (props) => {
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>Profile</NavLink>
+                    <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{name}</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="#"><RiLogoutBoxLine className={style.outImg}/><span className={style.outTxt}>L o g o u t</span></NavLink>
