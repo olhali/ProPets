@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col} from 'reactstrap';
 import Registration from "./Registration";
 import Login from "./Login";
-import {login, registration, urlLogin} from "../utils/Constants";
+import {login, registration, urlLogin, urlRegistration} from "../utils/Constants";
 import {Link, useHistory} from "react-router-dom";
 import MainPage from "./MainPage";
 import AuthorizationSubmit from "./Home";
@@ -16,12 +16,21 @@ const Authorization = (props) => {
     };
 
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
     const handleName = (e) => {
         console.log(e.target.value);
         setUsername({
             username: e.target.value
+        })
+    };
+
+    const handleEmail = (e) => {
+        console.log(e.target.value);
+        setEmail( {
+            email: e.target.value
         })
     };
 
@@ -31,32 +40,84 @@ const Authorization = (props) => {
         })
     };
 
-    const [loginRegistrationToggle, setLoginRegistrationToggle] = useState(<Login handleName={handleName} handlePassword={handlePassword}/>);
-    const [activeComponent, setActiveComponent] = useState(true);
+    const [loginRegistrationToggle, setLoginRegistrationToggle] = useState(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
+    const [activeComponent, setActiveComponent] = useState(login);
 
     /* const mainPage = () => {
         props.changePage('MainPage');
     };*/
 
-
-
      let history = useHistory();
      const handleSubmit = () => {
-        /* console.log(username);
-         console.log(password);*/
-        let data = {username: username.username, password: password.password};
-        console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222"}
-         fetch(`${urlLogin}`, {
-             method: 'POST',
-             headers: {
-                 'Content-type': 'application/json',
-             },
-             body: JSON.stringify(data)
-         })
-             .then(results => results.json())
-             .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
-            /* .then(data => console.log(data.accessToken))*/
+        console.log(activeComponent);
+        if (activeComponent === login) {
+            /* console.log(username);
+               console.log(password);*/
+            let data = {userEmail: email.email, password: password.password};
+            console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222"}
+            fetch(`${urlLogin}`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then((response) => {
+                    console.log(response);
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error(response.statusText);
+                    }})
+                .then(data => {console.log(data); return data})
+                .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
+                .then(data => history.push('/main_page'))
+
+               .catch(error => alert("You entered incorrect data. Try again"));
+        } else {
+            let data = {username: username.username, userEmail: email.email, password: password.password};
+            console.log(JSON.stringify(data));                                          //{username: "olya", email: "olya@gmail.com", "password":"222222"}
+            fetch(`${urlRegistration}`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then((response) => {
+                    console.log(response);
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error(response.statusText);
+                    }})
+                .then(data => console.log(data))                                          //{message: "User registered successfully!"}
+                .then(data => history.push('/main_page'))
+
+                .catch(error => alert("You entered incorrect data. Try again"));
+        }
      };
+
+
+  /*  let history = useHistory();
+    const handleSubmit = () => {
+            /!* console.log(username);
+               console.log(password);*!/
+            let data = {username: username.username, password: password.password};
+            console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222", email: "linetskI@gmail.com"}
+            fetch(`${urlLogin}`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then(results => results.json())
+                .then(data => console.log(data))
+                .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
+              /!* .then(data => console.log(data.accessToken))*!/
+
+    };*/
 
 
 /*.then(response => response.json())
@@ -80,10 +141,10 @@ const Authorization = (props) => {
     const selectActiveComponent = (activeComponent) => {
             setActiveComponent(activeComponent);
             if (activeComponent === login) {
-                setLoginRegistrationToggle(<Login handleName={handleName} handlePassword={handlePassword}/>);
+                setLoginRegistrationToggle(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
             }
        if (activeComponent === registration) {
-           setLoginRegistrationToggle(<Registration/>);
+           setLoginRegistrationToggle(<Registration handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword}/>);
        }
     };
 
