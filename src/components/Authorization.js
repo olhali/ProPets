@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, Container, Row, Col} from 'reactstrap';
 import Registration from "./Registration";
 import Login from "./Login";
-import {login, registration} from "../utils/Constants";
+import {login, registration, urlLogin} from "../utils/Constants";
 import {Link, useHistory} from "react-router-dom";
 import MainPage from "./MainPage";
 import AuthorizationSubmit from "./Home";
@@ -14,17 +14,55 @@ const Authorization = (props) => {
         setModal(!modal);
         props.hideAuthorization1();
     };
-    const [loginRegistrationToggle, setLoginRegistrationToggle] = useState(<Login/>);
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleName = (e) => {
+        console.log(e.target.value);
+        setUsername({
+            username: e.target.value
+        })
+    };
+
+    const handlePassword = (event) => {
+        setPassword({
+            password: event.target.value
+        })
+    };
+
+    const [loginRegistrationToggle, setLoginRegistrationToggle] = useState(<Login handleName={handleName} handlePassword={handlePassword}/>);
     const [activeComponent, setActiveComponent] = useState(true);
 
     /* const mainPage = () => {
         props.changePage('MainPage');
     };*/
 
+
+
      let history = useHistory();
      const handleSubmit = () => {
-       history.push('/main_page');
+        /* console.log(username);
+         console.log(password);*/
+        let data = {username: username.username, password: password.password};
+        console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222"}
+         fetch(`${urlLogin}`, {
+             method: 'POST',
+             headers: {
+                 'Content-type': 'application/json',
+             },
+             body: JSON.stringify(data)
+         })
+             .then(results => results.json())
+             .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
+            /* .then(data => console.log(data.accessToken))*/
      };
+
+
+/*.then(response => response.json())
+            .catch(err => console.log(err))
+       /!*history.push('/main_page');*!/
+     };*/
 
     /*const [login, setLogin] = useState(true);
     const [registration, setRegistration] = useState(true);
@@ -42,7 +80,7 @@ const Authorization = (props) => {
     const selectActiveComponent = (activeComponent) => {
             setActiveComponent(activeComponent);
             if (activeComponent === login) {
-                setLoginRegistrationToggle(<Login/>);
+                setLoginRegistrationToggle(<Login handleName={handleName} handlePassword={handlePassword}/>);
             }
        if (activeComponent === registration) {
            setLoginRegistrationToggle(<Registration/>);
