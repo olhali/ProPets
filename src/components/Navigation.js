@@ -14,7 +14,8 @@ import {
 } from "reactstrap";
 import style from "../css_modules/navigation.module.css";
 import {RiLogoutBoxLine} from "react-icons/all";
-import {Link, NavLink as RRNavLink} from "react-router-dom";
+import {Link, NavLink as RRNavLink, useHistory} from "react-router-dom";
+import {login, profileName, urlLogin, urlRegistration} from "../utils/Constants";
 
 const Navigation = (props) => {
     /*const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -28,7 +29,26 @@ const Navigation = (props) => {
     const [collapseOpen, setCollapseOpen] = useState(false);
 
     const [avatar, setAvatar] = useState(<img src='https://icons.veryicon.com/png/o/business/wms-purchase-sale-and-storage-background/customer-5.png' className={style.avatar} alt='Avatar'/>);
-    const [name, setName] = useState('Mystery person');
+    const [username, setUsername] = useState('');
+
+    const nameProfile = () => {
+        console.log('nameProfile called');
+        let token = localStorage.getItem('accessToken');
+            fetch(`${profileName}`, {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Authorization': token
+            }})
+                .then(response => response.text())
+                .then(data => setUsername(data))
+    };
+
+    useEffect(() => {
+        console.log('useEffect called');
+        nameProfile();
+        console.log('nameProfile = '+username)
+    });
 
     return (
         <div id='navDivId' className='flex-container'>
@@ -135,7 +155,7 @@ const Navigation = (props) => {
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{name}</NavLink>
+                    <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{username}</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="#"><RiLogoutBoxLine className={style.outImg}/><span className={style.outTxt}>L o g o u t</span></NavLink>

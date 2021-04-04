@@ -37,10 +37,10 @@ const Profile = (props) => {
         props.hideAuthorization1();
     };*/
 
-    let history = useHistory();
+  /*  let history = useHistory();
     const handleSave = () => {
         history.push('/main_page/home');
-    };
+    };*/
 
     return (
         <div>
@@ -60,8 +60,8 @@ const Profile = (props) => {
                     {profileActivitiesToggle}
                 </Row>
             </Container>
-            <Button color="secondary" onClick=''>Cancel</Button>
-            <Button color='success' className='submit' onClick={handleSave}>Save changes</Button>
+          {/*  <Button color="secondary" onClick=''>Cancel</Button>
+            <Button color='success' className='submit' onClick={handleSave}>Save changes</Button>*/}
         </div>
     );
 };

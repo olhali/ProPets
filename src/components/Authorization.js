@@ -54,7 +54,7 @@ const Authorization = (props) => {
             /* console.log(username);
                console.log(password);*/
             let data = {userEmail: email.email, password: password.password};
-            console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222"}
+            //console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222"}
             fetch(`${urlLogin}`, {
                 method: 'POST',
                 headers: {
@@ -63,20 +63,21 @@ const Authorization = (props) => {
                 body: JSON.stringify(data)
             })
                 .then((response) => {
-                    console.log(response);
+                   // console.log(response);
                     if (response.ok) {
                         return response.json()
                     } else {
                         throw new Error(response.statusText);
                     }})
-                .then(data => {console.log(data); return data})
+                /*.then(data => {console.log(data); return data})*/
+                .then(data =>  data)
                 .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
                 .then(data => history.push('/main_page'))
 
                .catch(error => alert("You entered incorrect data. Try again"));
         } else {
             let data = {username: username.username, userEmail: email.email, password: password.password};
-            console.log(JSON.stringify(data));                                          //{username: "olya", email: "olya@gmail.com", "password":"222222"}
+            //console.log(JSON.stringify(data));                                          //{username: "olya", email: "olya@gmail.com", "password":"222222"}
             fetch(`${urlRegistration}`, {
                 method: 'POST',
                 headers: {
@@ -85,13 +86,13 @@ const Authorization = (props) => {
                 body: JSON.stringify(data)
             })
                 .then((response) => {
-                    console.log(response);
+                   // console.log(response);
                     if (response.ok) {
                         return response.json()
                     } else {
                         throw new Error(response.statusText);
                     }})
-                .then(data => console.log(data))                                          //{message: "User registered successfully!"}
+               // .then(data => console.log(data))                                          //{message: "User registered successfully!"}
                 .then(data => history.push('/main_page'))
 
                 .catch(error => alert("You entered incorrect data. Try again"));
