@@ -47,6 +47,19 @@ const Authorization = (props) => {
         props.changePage('MainPage');
     };*/
 
+    const checkPassword = () => {
+        if (document.getElementById('user_password').value === document.getElementById('repeat_password').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = '* Passwords match *';
+            document.getElementById('submit').disabled = false;
+          /*  document.getElementById('submit').attributes({disabled: false});*/
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = '* Passwords do not match *';
+            document.getElementById('submit').disabled = true;
+        }
+    };
+
      let history = useHistory();
      const handleSubmit = () => {
         console.log(activeComponent);
@@ -77,7 +90,7 @@ const Authorization = (props) => {
                .catch(error => alert("You entered incorrect data. Try again"));
         } else {
             let data = {username: username.username, userEmail: email.email, password: password.password};
-            //console.log(JSON.stringify(data));                                          //{username: "olya", email: "olya@gmail.com", "password":"222222"}
+            //console.log(JSON.stringify(data));                                          //{"username": "olya", "userEmail": "olya@gmail.com", "password":"222222"}
             fetch(`${urlRegistration}`, {
                 method: 'POST',
                 headers: {
@@ -93,6 +106,8 @@ const Authorization = (props) => {
                         throw new Error(response.statusText);
                     }})
                // .then(data => console.log(data))                                          //{message: "User registered successfully!"}
+                .then(data =>  data)
+                .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
                 .then(data => history.push('/main_page'))
 
                 .catch(error => alert("You entered incorrect data. Try again"));
@@ -145,7 +160,7 @@ const Authorization = (props) => {
                 setLoginRegistrationToggle(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
             }
        if (activeComponent === registration) {
-           setLoginRegistrationToggle(<Registration handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword}/>);
+           setLoginRegistrationToggle(<Registration checkPassword={checkPassword} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword}/>);
        }
     };
 
@@ -176,7 +191,7 @@ const Authorization = (props) => {
                 <ModalFooter className='modal-footer'>
                     <p className={style.p_modal}>By clicking “Submit”, you agree to us processing your information.</p>
                     <Button color="secondary" onClick={toggle}>Cancel</Button>
-                    <Button color='success' className='submit' onClick={handleSubmit}>Submit</Button>
+                    <Button color='success' id='submit' className='submit' onClick={handleSubmit}>Submit</Button>
                {/*<Link to={`/main_page/${props.changePage}`} className='submit'>Submit</Link>*/}
             {/*   <AuthorizationSubmit/>*/}
                 </ModalFooter>
