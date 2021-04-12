@@ -18,26 +18,45 @@ const Authorization = (props) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [validPassword, setValidPassword] = useState(false);
+    const [validationLabel, setValidationLabel] = useState("");
     const [error, setError] = useState(null);
 
     const handleName = (e) => {
         console.log(e.target.value);
-        setUsername({
-            username: e.target.value
-        })
+        setUsername(
+            e.target.value
+        )
     };
 
     const handleEmail = (e) => {
         console.log(e.target.value);
-        setEmail( {
-            email: e.target.value
-        })
+        setEmail(
+            e.target.value
+        )
     };
 
     const handlePassword = (event) => {
-        setPassword({
-            password: event.target.value
-        })
+        setPassword(
+            event.target.value
+        )
+    };
+
+    const handleConfirmPassword = (e) => {
+        setConfirmPassword(
+            e.target.value
+        );
+    };
+
+    const checkPasswords = () => {
+        if (password === confirmPassword) {
+            setValidationLabel(<span style={{color : "green"}}>Passwords match</span>);
+            setValidPassword(true)
+        } else {
+            setValidationLabel(<span style={{color : "red"}}>The passwords do not match!</span>);
+            setValidPassword(false)
+        }
     };
 
     const [loginRegistrationToggle, setLoginRegistrationToggle] = useState(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
@@ -47,18 +66,18 @@ const Authorization = (props) => {
         props.changePage('MainPage');
     };*/
 
-    const checkPassword = () => {
+  /*  const checkPasswords = () => {
         if (document.getElementById('user_password').value === document.getElementById('repeat_password').value) {
             document.getElementById('message').style.color = 'green';
             document.getElementById('message').innerHTML = '* Passwords match *';
             document.getElementById('submit').disabled = false;
-          /*  document.getElementById('submit').attributes({disabled: false});*/
+          /!*  document.getElementById('submit').attributes({disabled: false});*!/
         } else {
             document.getElementById('message').style.color = 'red';
             document.getElementById('message').innerHTML = '* Passwords do not match *';
             document.getElementById('submit').disabled = true;
         }
-    };
+    };*/
 
      let history = useHistory();
      const handleSubmit = () => {
@@ -66,7 +85,7 @@ const Authorization = (props) => {
         if (activeComponent === login) {
             /* console.log(username);
                console.log(password);*/
-            let data = {userEmail: email.email, password: password.password};
+            let data = {userEmail: email, password: password};
             //console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222"}
             fetch(`${urlLogin}`, {
                 method: 'POST',
@@ -89,7 +108,7 @@ const Authorization = (props) => {
 
                .catch(error => alert("You entered incorrect data. Try again"));
         } else {
-            let data = {username: username.username, userEmail: email.email, password: password.password};
+            let data = {username: username, userEmail: email, password: password};
             //console.log(JSON.stringify(data));                                          //{"username": "olya", "userEmail": "olya@gmail.com", "password":"222222"}
             fetch(`${urlRegistration}`, {
                 method: 'POST',
@@ -160,9 +179,16 @@ const Authorization = (props) => {
                 setLoginRegistrationToggle(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
             }
        if (activeComponent === registration) {
-           setLoginRegistrationToggle(<Registration checkPassword={checkPassword} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword}/>);
+           setLoginRegistrationToggle(<Registration checkPasswords={checkPasswords} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword} handleConfirmPassword={handleConfirmPassword} validationLabel={validationLabel}/>);
        }
     };
+
+    /*useEffect(() => {
+        checkPasswords();
+        setLoginRegistrationToggle(<Registration checkPasswords={checkPasswords} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword} handleConfirmPassword={handleConfirmPassword} validationLabel={validationLabel}/>);
+        console.log("password="+password);
+        console.log("confirmPassword="+confirmPassword);
+    }, [password, confirmPassword]);*/
 
      return (
         <div>

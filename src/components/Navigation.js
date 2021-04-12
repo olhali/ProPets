@@ -44,6 +44,12 @@ const Navigation = (props) => {
                 .then(data => setUsername(data))
     };
 
+    let history = useHistory();
+    const logout = () => {
+        localStorage.removeItem('accessToken');
+        history.push('/start_page');
+    };
+
     useEffect(() => {
         console.log('useEffect called');
         nameProfile();
@@ -158,7 +164,7 @@ const Navigation = (props) => {
                     <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{username}</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="#"><RiLogoutBoxLine className={style.outImg}/><span className={style.outTxt}>L o g o u t</span></NavLink>
+                    <NavLink onClick={logout}><RiLogoutBoxLine className={style.outImg}/><span className={style.outTxt}>L o g o u t</span></NavLink>
                 </NavItem>
                 <DropdownItem divider/>
             </Nav>
