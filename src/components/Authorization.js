@@ -7,6 +7,7 @@ import {Link, useHistory} from "react-router-dom";
 import MainPage from "./MainPage";
 import AuthorizationSubmit from "./Home";
 import style from '../css_modules/login.module.css'
+import validator from "validator";
 
 const Authorization = (props) => {
     const [modal, setModal] = useState(false);
@@ -34,7 +35,7 @@ const Authorization = (props) => {
         console.log(e.target.value);
         setEmail(
             e.target.value
-        )
+        );
     };
 
     const handlePassword = (event) => {
@@ -49,17 +50,72 @@ const Authorization = (props) => {
         );
     };
 
-    const checkPasswords = () => {
-        if (password === confirmPassword) {
-            setValidationLabel(<span style={{color : "green"}}>Passwords match</span>);
-            setValidPassword(true)
+    const checkName = () => {
+        if (username === '') {
+            setValidationLabel(<span style={{color : "red"}}>Enter your name!</span>);
+            return false;
         } else {
-            setValidationLabel(<span style={{color : "red"}}>The passwords do not match!</span>);
-            setValidPassword(false)
+            setValidationLabel('');
+            return true;
         }
     };
 
-    const [loginRegistrationToggle, setLoginRegistrationToggle] = useState(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
+    const checkEmail = () => {
+        if (email === '') {
+            /*setValidationLabel('');*/
+            setValidationLabel(<span style={{color : "red"}}>Enter your email!</span>);
+            return false;
+        }
+        if (validator.isEmail(email)) {
+            setValidationLabel(<span style={{color : "green"}}>Valid Email</span>);
+            return true;
+        } else {
+            setValidationLabel(<span style={{color : "red"}}>Invalid Email!</span>);
+            return false;
+        }
+    };
+
+    const checkPasswords = () => {
+        console.log('checkPasswords');
+        if (password === '' && confirmPassword ==='') {
+            setValidationLabel(<span style={{color : "red"}}>Enter your password!</span>);
+            return false;
+        }
+        if (password === confirmPassword) {
+            setValidationLabel(<span style={{color : "green"}}>Passwords match</span>);
+            setValidPassword(true);
+            return true;
+        } else {
+            setValidationLabel(<span style={{color : "red"}}>The passwords do not match!</span>);
+            setValidPassword(false);
+            return false;
+        }
+    };
+
+    const checkAllFieldsOnTrue = () => {
+        if (checkName() === true && checkEmail() === true && checkPasswords() === true) {
+            setValidationLabel(<span style={{color : "green"}}>Your data has been filled in successfully, press the "Submit"</span>);
+        }
+    };
+
+    useEffect(() => {
+        checkName();
+    }, [username]);
+
+    useEffect(() => {
+        checkEmail();
+    },[email]);
+
+    useEffect(() => {
+        checkPasswords();
+    },[password,confirmPassword]);
+
+    useEffect(() => {
+        checkAllFieldsOnTrue();
+    },[username, email, password,confirmPassword]);
+
+
+    /*const [loginRegistrationToggle, setLoginRegistrationToggle] = useState(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);*/
     const [activeComponent, setActiveComponent] = useState(login);
 
     /* const mainPage = () => {
@@ -108,6 +164,18 @@ const Authorization = (props) => {
 
                .catch(error => alert("You entered incorrect data. Try again"));
         } else {
+            if (checkName() === false) {
+                return;
+            }
+            if (checkEmail() === false) {
+                return;
+            }
+            if (checkPasswords() === false) {
+                return;
+            }
+            if (checkAllFieldsOnTrue() === true) {
+                return;
+            }
             let data = {username: username, userEmail: email, password: password};
             //console.log(JSON.stringify(data));                                          //{"username": "olya", "userEmail": "olya@gmail.com", "password":"222222"}
             fetch(`${urlRegistration}`, {
@@ -175,20 +243,25 @@ const Authorization = (props) => {
 
     const selectActiveComponent = (activeComponent) => {
             setActiveComponent(activeComponent);
-            if (activeComponent === login) {
-                setLoginRegistrationToggle(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
-            }
-       if (activeComponent === registration) {
-           setLoginRegistrationToggle(<Registration checkPasswords={checkPasswords} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword} handleConfirmPassword={handleConfirmPassword} validationLabel={validationLabel}/>);
-       }
     };
 
-    /*useEffect(() => {
-        checkPasswords();
-        setLoginRegistrationToggle(<Registration checkPasswords={checkPasswords} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword} handleConfirmPassword={handleConfirmPassword} validationLabel={validationLabel}/>);
-        console.log("password="+password);
-        console.log("confirmPassword="+confirmPassword);
-    }, [password, confirmPassword]);*/
+    const loginRegistrationToggle = () => {
+        if (activeComponent === login) {
+            return <Login handleEmail={handleEmail} handlePassword={handlePassword}/>;
+        } else if (activeComponent === registration) {
+            return <Registration checkPasswords={checkPasswords} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword} handleConfirmPassword={handleConfirmPassword} validationLabel={validationLabel}/>
+        }
+    };
+
+   /* const selectActiveComponent = (activeComponent) => {
+        setActiveComponent(activeComponent);
+        if (activeComponent === login) {
+            setLoginRegistrationToggle(<Login handleEmail={handleEmail} handlePassword={handlePassword}/>);
+        }
+        if (activeComponent === registration) {
+            setLoginRegistrationToggle(<Registration checkPasswords={checkPasswords} handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword} handleConfirmPassword={handleConfirmPassword} validationLabel={validationLabel}/>);
+        }
+    };*/
 
      return (
         <div>
@@ -210,7 +283,7 @@ const Authorization = (props) => {
                         </Col>
                     </Row>
                         <Row className='row-authorization'>
-                            {loginRegistrationToggle}
+                            {loginRegistrationToggle()}
                         </Row>
                     </Container>
                 </ModalBody>

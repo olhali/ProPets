@@ -3,7 +3,6 @@ import './App.css';
 import StartPage from "./components/StartPage";
 import MainPage from "./components/MainPage";
 import {Route, Switch} from "react-router-dom";
-import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 
 class App extends React.Component {
@@ -26,7 +25,6 @@ class App extends React.Component {
                 <Route path={['/', '/start_page']} exact component={StartPage}/>
                 <Route path={['/main_page', '/main_page/:id', '/main_page/services/:id']} exact render={() => <MainPage changePage={this.changePage}/>}/>
                {/* <Route path='/main_page' render={(props) => (<MainPage {...props} changePage={this.changePage}/>)}/>*/}
-                <Route path='/forgot_password' component={ForgotPassword}/>
                 <Route path='/reset_password' component={ResetPassword}/>
                 <Route component={StartPage}/>
             </Switch>

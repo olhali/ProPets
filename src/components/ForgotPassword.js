@@ -23,7 +23,7 @@ const ForgotPassword = (props) => {
         setEmail(
            e.target.value
     );
-        if (validator.isEmail(email)) {
+        if (validator.isEmail(e.target.value)) {
             setValidationLabel(<span style={{color : "green"}}>Valid Email</span>);
             setValidEmail(true)
         } else {
