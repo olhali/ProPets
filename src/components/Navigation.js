@@ -40,14 +40,24 @@ const Navigation = (props) => {
                     'Content-type': 'application/json',
                     'Authorization': token
             }})
-                .then(response => response.text())
+                .then(response => {
+                    if (response.ok) {
+                       return response.text();
+                    } else {
+                        //alert('To perform this action - you must login again');
+                        window.location.replace('/');
+                        throw new Error ();
+                    }})
                 .then(data => setUsername(data))
+
+               // .catch(error => alert('To perform this action - you must login again'));
     };
+
 
     let history = useHistory();
     const logout = () => {
         localStorage.removeItem('accessToken');
-        history.push('/start_page');
+        history.push('/');
     };
 
     useEffect(() => {

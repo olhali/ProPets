@@ -4,6 +4,8 @@ import StartPage from "./components/StartPage";
 import MainPage from "./components/MainPage";
 import {Route, Switch} from "react-router-dom";
 import ResetPassword from "./components/ResetPassword";
+import CardLost from "./components/CardLost";
+import CardFound from "./components/CardFound";
 
 class App extends React.Component {
     constructor(props) {
@@ -23,9 +25,13 @@ class App extends React.Component {
         return (
             <Switch>
                 <Route path={['/', '/start_page']} exact component={StartPage}/>
-                <Route path={['/main_page', '/main_page/:id', '/main_page/services/:id']} exact render={() => <MainPage changePage={this.changePage}/>}/>
+                <Route path={['/main_page', '/main_page/:id', '/main_page/services/:id', '/main_page/lost/:id']} exact render={() => <MainPage changePage={this.changePage}/>}/>
+            {/*<Route path={['/main_page', '/main_page/:id', '/main_page/services/:id', '/main_page/lost/:id', '/main_page/found/:id']} exact render={() => <MainPage changePage={this.changePage}/>}/>*/}
+           {/*     <Route path='/main_page/lost/card_lost' exact component={CardLost}/>
+                <Route path='/main_page/found/card_found' exact component={CardFound}/>*/}
                {/* <Route path='/main_page' render={(props) => (<MainPage {...props} changePage={this.changePage}/>)}/>*/}
-                <Route path='/reset_password' component={ResetPassword}/>
+             {/*   <Route path='/main_page/lost/:id' component={CardLost}/>*/}
+               <Route path='/reset_password' component={ResetPassword}/>
                 <Route component={StartPage}/>
             </Switch>
         )

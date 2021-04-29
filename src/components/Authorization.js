@@ -158,7 +158,7 @@ const Authorization = (props) => {
                         throw new Error(response.statusText);
                     }})
                 /*.then(data => {console.log(data); return data})*/
-                .then(data =>  data)
+                .then(data =>  {console.log(data.accessToken); return data})
                 .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
                 .then(data => history.push('/main_page'))
 

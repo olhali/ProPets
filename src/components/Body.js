@@ -10,6 +10,8 @@ import Hotels from "./Hotels";
 import Walking from "./Walking";
 import Fostering from "./Fostering";
 import VetHelp from "./VetHelp";
+import CardLost from "./CardLost";
+import CardFound from "./CardFound";
 
 class Body extends React.Component {
 
@@ -17,8 +19,12 @@ class Body extends React.Component {
         return (
             <Switch>
                 <Route path='/main_page/home' component={Home}/>
+               {/* <Route path='/main_page/lost' component={Lost}/>*/}
+               {/* <Route path={['/main_page/lost', '/main_page/lost/:id']} exact render={() => <Lost/>} />*/}
                 <Route path='/main_page/lost' component={Lost}/>
                 <Route path='/main_page/found' component={Found}/>
+                {/*<Route path='/main_page/lost/card_lost' component={CardLost}/>
+                <Route path='/main_page/found/card_found' component={CardFound}/>*/}
                 <Route path='/main_page/services/hotels' component={Hotels}/>
                 <Route path='/main_page/services/walking' component={Walking}/>
                 <Route path='/main_page/services/fostering' component={Fostering}/>

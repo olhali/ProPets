@@ -1,0 +1,40 @@
+.dropzone {
+    height: 7rem;
+   /* width: 20rem;*/
+    margin-left: 6rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border: 2px dashed rgb(250, 155, 97);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(255, 192, 130);
+}
+
+.addPhoto {
+    margin-left: 3.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+
+.active {
+    border: 2px solid rgb(67, 170, 124);
+    color: rgb(67, 170, 124);
+}
+
+.liPhoto {
+    list-style-type: none;
+    display: inline;
+    margin-right: 5px;
+}
+
+/*
+
+.color {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}*/

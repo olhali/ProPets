@@ -1,7 +1,11 @@
 import React from "react";
 import style from "../css_modules/header.module.css";
-import Posts from "./Posts";
-import {FaSearch, FaPaw} from "react-icons/all";
+import {FaPlus} from "react-icons/all";
+import {Link} from "react-router-dom";
+import LostPetRoute from "./LostPetRoute";
+import MiniCard from "./MiniCard";
+
+
 
 class Lost extends React.Component {
 
@@ -9,20 +13,30 @@ class Lost extends React.Component {
         return (
             <div>
                 <div>
-                    <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaSearch/> I lost my pet</button>
-                    <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPaw/> I found a pet</button>
+                    <Link to='/main_page/lost/card_lost'>
+                        <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPlus/> Add new</button>
+                    </Link>
                 </div>
+            {/*    <div>
+                    <MiniCard/>
+                </div>*/}
 
                 <div className='flex-container'>
-                    <div className='row align-items-center'>
-                        <Posts className='col-9 col-sm-9'/>
-                        <div className='col-3 col-sm-3'>
-                            <img src={require(`../Images/love-clipart-pets.png`)} alt=''/>
-                        </div>
-                    </div>
+                        <LostPetRoute/>
                 </div>
-
             </div>
+
+            /*<Switch>
+            <Route path='/main_page/lost/card_lost' component={PhotoUpload}/>
+            <Route path='/main_page/lost/card_found' component={CardFound}/>
+            </Switch>
+*/
+            /*<div>
+
+                    <Link to='/main_page/lost/card_lost' className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPlus/> Add new</Link>
+                    {/!*<button onClick={() => this.clickCardLostHandler()} className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPlus/> Add new</button>*!/}
+
+            </div>*/
         )
     }
 }

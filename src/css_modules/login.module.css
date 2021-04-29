@@ -61,6 +61,69 @@ input[placeholder] {
     font-size: 0.7em;
 }
 
+.requiredFields {
+    color: rgb(67, 170, 124);
+    font-size: 1.1em;
+    text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
+}
+
+.footnote {
+    color: red;
+    font-size: 2em;
+}
+
+.legendLost, .legendFound {
+    color: rgb(67, 170, 124);
+    font-size: 2em;
+    text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
+}
+
+.publish {
+    background-color: rgb(67, 170, 124);
+    font-size: 1.5em;
+    color: rgb(255, 203, 157);
+    font-weight: bold;
+    border: 3px solid rgb(67, 150, 124);
+    border-radius: 50px;
+    float: right;
+}
+
+.cancel {
+    background-color: lightgray;
+    font-size: 1.5em;
+    font-weight: 600;
+    border: 3px solid gray;
+    border-radius: 50px;
+    float: right;
+    color: gray;
+    margin-right: 0.5em;
+}
+
+.labelLostFound {
+    font-weight: bold;
+    color: red;
+    font-size: 1.5em;
+    margin: auto;
+    display: table;
+    text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
+}
+
+.published {
+    margin-top: 3em;
+    font-weight: bold;
+    color:  rgb(67, 170, 124);
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 0.1em 0.1em 0.2em rgb(255, 192, 130);
+    letter-spacing: 5px;
+}
+
+.publishedOk {
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0.1em 0.1em 0.2em rgb(255, 192, 130);
+}
+
 /*
 .modal1 {
     background-color: rgb(255, 203, 157);
