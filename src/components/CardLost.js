@@ -371,6 +371,8 @@ export default CardLost;
 
 
 
+
+
 /* getlostAnimals(){
          return [{color: 'red', sex: 'male', height: '45cm',description : 'sadsada'},
              {color: 'blue', sex: 'male', height: '45cm',description : 'sadsada'},
