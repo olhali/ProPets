@@ -28,14 +28,14 @@
     opacity: 1;
 }
 
-.link {
+.link, .linkService {
     background-color: rgb(255, 243, 200);
     box-shadow: 0 3px 6px rgb(255, 203, 157);
     opacity: 1;
     font-weight: bold;
     color: rgb(67, 170, 124);
 }
-.link:hover {
+.link:hover, .linkService:hover {
     background-color: rgb(67, 170, 124);
     box-shadow: 0 3px 6px rgb(255, 203, 157);
     opacity: 1;
@@ -43,7 +43,7 @@
     color: rgb(255, 203, 157);
     font-family: 'Krona One', sans-serif;
 }
-.link:active {
+.link:active, .linkService:active {
     background-color: rgb(67, 185, 124);
     border: 2px solid rgb(255, 203, 157);
     box-shadow: 0 3px 6px rgb(255, 203, 157);
@@ -55,6 +55,12 @@
 .link:focus {
     outline: none;                                         /*убирает черную рамку вокруг кнопки*/
     background-color: rgb(67, 185, 124);        /*цвет кнопки после нажатия не изменяется*/
+    border: 2px solid rgb(67, 150, 124);
+    color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+.linkService:focus {
+    outline: none;                                         /*убирает черную рамку вокруг кнопки*/
     border: 2px solid rgb(67, 150, 124);
     color: rgb(255, 203, 157);
     font-family: 'Krona One', sans-serif;
@@ -120,4 +126,11 @@
 
 .outTxt {
     color: rgb(250, 155, 97);
+    margin-left: 1.5em;
+}
+
+.avatar {
+    margin-right: 1.5em;
+    width: 4em;
+    border-radius: 50%;
 }

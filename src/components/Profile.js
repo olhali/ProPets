@@ -1,4 +1,79 @@
 import React, { useState } from 'react';
+import {
+    TabContent,
+    TabPane,
+    Nav,
+    NavItem,
+    NavLink,
+    Card,
+    Button,
+    CardTitle,
+    CardText,
+    Row,
+    Col,
+    Container, ModalFooter
+} from 'reactstrap';
+import ProfileData from "./ProfileData";
+import {profileData, activities} from "../utils/Constants";
+import Activities from "./Activities";
+import {useHistory} from "react-router-dom";
+
+const Profile = (props) => {
+    const [profileActivitiesToggle, setProfileActivitiesToggle] = useState(<ProfileData/>);
+    const [activeComponent, setActiveComponent] = useState(true);
+
+    const selectActiveComponent = (activeComponent) => {
+        setActiveComponent(activeComponent);
+        if (activeComponent === profileData) {
+            setProfileActivitiesToggle(<ProfileData/>);
+        }
+        if (activeComponent === activities) {
+            setProfileActivitiesToggle(<Activities/>);
+        }
+    };
+
+    /*const toggle = () => {
+        setModal(!modal);
+        props.hideAuthorization1();
+    };*/
+
+  /*  let history = useHistory();
+    const handleSave = () => {
+        history.push('/main_page/home');
+    };*/
+
+    return (
+        <div>
+            <h3>Your profile. Change, edit and manage your data.</h3>
+            <Container>
+                <Row>
+                    <Col xs={6} md={6}>
+                        <Button className='btn-movement btn-authorization'
+                                onClick={() => selectActiveComponent(profileData)}>My profile</Button>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <Button className='btn-movement btn-authorization'
+                                onClick={() => selectActiveComponent(activities)}>Activities</Button>
+                    </Col>
+                </Row>
+                <Row className='row-authorization'>
+                    {profileActivitiesToggle}
+                </Row>
+            </Container>
+          {/*  <Button color="secondary" onClick=''>Cancel</Button>
+            <Button color='success' className='submit' onClick={handleSave}>Save changes</Button>*/}
+        </div>
+    );
+};
+
+export default Profile;
+
+
+
+
+
+{/*
+import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import ProfileData from "./ProfileData";
 
@@ -56,3 +131,6 @@ const Profile = (props) => {
 };
 
 export default Profile;
+        */}
+
+

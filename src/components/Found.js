@@ -1,5 +1,37 @@
 import React from "react";
 import style from "../css_modules/header.module.css";
+import {FaPlus} from "react-icons/all";
+
+class Found extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            openCardFound: false
+        }
+    }
+
+    clickCardFoundHandler = () => {
+        this.setState({
+            openCardFound: true
+        })
+    };
+
+    render() {
+        return (
+            <div>
+                <div>
+                    <button onClick={() => this.clickCardFoundHandler()} className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPlus/> Add new</button>
+                </div>
+            </div>
+        )
+    }
+}
+export default Found;
+
+
+/*
+import React from "react";
+import style from "../css_modules/header.module.css";
 import Posts from "./Posts";
 import {FaSearch, FaPaw} from "react-icons/all";
 
@@ -26,4 +58,4 @@ class Found extends React.Component {
         )
     }
 }
-export default Found;
+export default Found;*/
