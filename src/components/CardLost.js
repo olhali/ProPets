@@ -15,9 +15,10 @@ class CardLost extends React.Component {
         super(props);
         this.state = {
             type: '',
+            breed: '',
             color: '',
             sex: '',
-            height: '',
+            /*height: '',*/
             distinction: '',
             description: '',
             location: '',
@@ -28,22 +29,26 @@ class CardLost extends React.Component {
             error: '',
             validationLabel: '',
             responseAfterCard: false
-        }
+        };
+        window.history.pushState("", "", '/main_page/lost/card_lost');
     };
 
      componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.state.type !== prevState.type) {
             this.validation();
          }
+        if (this.state.breed !== prevState.breed) {
+            this.validation();
+        }
          if (this.state.color !== prevState.color) {
              this.validation();
          }
          if (this.state.sex !== prevState.sex) {
              this.validation();
          }
-         if (this.state.height !== prevState.height) {
+        /* if (this.state.height !== prevState.height) {
              this.validation();
-         }
+         }*/
          if (this.state.distinction !== prevState.distinction) {
              this.validation();
          }
@@ -53,9 +58,9 @@ class CardLost extends React.Component {
          if (this.state.location !== prevState.location) {
              this.validation();
          }
-         if (this.state.nameProfile !== prevState.nameProfile) {
+       /*  if (this.state.nameProfile !== prevState.nameProfile) {
              this.validation();
-         }
+         }*/
          if (this.state.date !== prevState.date) {
              this.validation();
          }
@@ -69,6 +74,11 @@ class CardLost extends React.Component {
                 type: e.target.value
         })
     };
+    handleBreed = (e) => {
+        this.setState({
+            breed: e.target.value
+        })
+    };
     handleColor = (e) => {
         this.setState({
                 color: e.target.value
@@ -79,11 +89,11 @@ class CardLost extends React.Component {
                 sex: e.target.value
         })
     };
-    handleHeight = (e) => {
+    /*handleHeight = (e) => {
         this.setState({
                 height: e.target.value
         })
-    };
+    };*/
     handleDistinction = (e) => {
         this.setState({
                 distinction: e.target.value
@@ -97,11 +107,6 @@ class CardLost extends React.Component {
     handleLocation = (e) => {
         this.setState({
                 location: e.target.value
-        })
-    };
-    handleNameProfile = (e) => {
-        this.setState({
-                nameProfile: e.target.value
         })
     };
     handleDate = (e) => {
@@ -218,12 +223,14 @@ class CardLost extends React.Component {
         }
         let petInfo = {};
         petInfo.type = this.state.type;
+        petInfo.breed = this.state.breed;
         petInfo.color = this.state.color;
         petInfo.sex = this.state.sex;
-        petInfo.height = this.state.height;
+        /*petInfo.height = this.state.height;*/
         petInfo.distinction = this.state.distinction;
         petInfo.description = this.state.description;
         petInfo.location = this.state.location;
+        petInfo.nameProfile = localStorage.getItem('userName');
         petInfo.imageUrls = this.state.imageUrls;
         petInfo.date = this.state.date;
         petInfo.phone = this.state.phone;
@@ -270,16 +277,16 @@ class CardLost extends React.Component {
                     <fieldset>
                         <legend className={style.legendLost}><strong>Lost your pet? Fill in all the data and publish!</strong></legend>
                     <label htmlFor='pets' className={style.label}><strong>L O S T : </strong><span className={style.requiredFields}>*</span></label>
-                    <input id='pets' type='text' name='pets' list="petsList" title="Choose a pet that is lost" placeholder='Choose a pet that is lost' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleType(event)}}/>
+                    <input id='pets' type='text' maxlength="23" name='pets' list="petsList" title="Choose a pet that is lost" placeholder='Choose a pet that is lost' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleType(event)}}/>
                     <datalist id="petsList">
                             <option value="Another pet..."/>
                             <option value="Bird"/>
                             <option value="Cat"/>
-                            <option value="Cavy"/>
                             <option value="Chinchilla"/>
                             <option value="Dog"/>
                             <option value="Farm animal (Livestock)"/>
                             <option value="Ferret"/>
+                            <option value="Guinea pig"/>
                             <option value="Hamster"/>
                             <option value="Mini Pig"/>
                             <option value="Mouse"/>
@@ -292,27 +299,42 @@ class CardLost extends React.Component {
                     </datalist>
                     <br/>
 
+                    <label htmlFor='breed' className={style.label}>Breed: </label>
+                        <input id='breed' type='text' maxlength="23" name='breed' title="Select the breed of the pet" placeholder='Select the breed of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleBreed(event)}}/>
+                        <br/>
+
                     <label htmlFor='color' className={style.label}>Color: <span className={style.requiredFields}>*</span></label>
-                    <input id='color' type='text' name='color' list="colorList" title="Select the color of the pet" placeholder='Select the color of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleColor(event)}}/>
+                    <input id='color' type='text' maxlength="23" name='color' list="colorList" title="Select the color of the pet" placeholder='Select the color of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleColor(event)}}/>
                     <datalist id="colorList">
-                            <option value="Multicolored"/>
+                            <option value="Multicolor"/>
                             <option value="Ash"/>
                             <option value="Beige"/>
                             <option value="Black"/>
+                            <option value="Black and white"/>
                             <option value="Blue"/>
                             <option value="Brown"/>
+                            <option value="Brown and black"/>
+                            <option value="Brown and white"/>
                             <option value="Dark Blue"/>
                             <option value="Dark Brown"/>
                             <option value="Dark Green"/>
                             <option value="Dark Grey"/>
                             <option value="Ginger"/>
+                            <option value="Ginger and white"/>
                             <option value="Golden"/>
                             <option value="Grey"/>
+                            <option value="Grey and white"/>
                             <option value="Green"/>
                             <option value="Motley"/>
+                            <option value="Orange"/>
                             <option value="Pink"/>
                             <option value="Red"/>
+                            <option value="Tricolor"/>
                             <option value="White"/>
+                            <option value="White and black"/>
+                            <option value="White and brown"/>
+                            <option value="White and ginger"/>
+                            <option value="White and grey"/>
                             <option value="Yellow"/>
                     </datalist>
                     <br/>
@@ -323,16 +345,16 @@ class CardLost extends React.Component {
                             <input type="radio" id="female" name="sex" value="female" onChange={(event) => {this.handleSex(event)}}/>
                             <label htmlFor="female">Female</label><br/>
                                 <input type="radio" id="unknown" name="sex" value="unknown" onChange={(event) => {this.handleSex(event)}}/>
-                                <label htmlFor="unknown">Unknown</label><br/>
+                                <label htmlFor="unknown">Unknown</label><br/><br/>
 
-                    <label htmlFor='height' className={style.label}>Height/ cm:</label>
-                    <input id='height' type='number' name='height' min="1" title="Enter the approximate height/size of the pet" placeholder='Enter the approximate height/size of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleHeight(event)}}/><br/><br/>
-
+                   {/* <label htmlFor='height' className={style.label}>Height/ cm:</label>
+                    <input id='height' type='number' onInput={(e) => e.target.value = e.target.value.slice(0, 3)} name='height' min="1" title="Enter the approximate height/size of the pet" placeholder='Enter the approximate height/size of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleHeight(event)}}/><br/><br/>
+*/}
                     <label htmlFor='distinction' className={style.label}>Distinctive features:</label>
-                    <textarea id='distinction' rows="2" cols="40" name='distinction' title='Enter the distinctive features of the pet' placeholder='Enter the distinctive features of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDistinction(event)}}/><br/><br/>
+                    <textarea id='distinction' rows="1" maxlength="400" name='distinction' title='Enter the distinctive features of the pet' placeholder='Enter the distinctive features of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDistinction(event)}}/><br/><br/>
 
                     <label htmlFor='description' className={style.label}>Description:</label>
-                    <textarea id='description' rows="3" cols="40" name='description' title='Describe of the pet' placeholder='Describe of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDescription(event)}}/><br/>
+                    <textarea id='description' rows="1" maxlength="400" name='description' title='Describe of the pet' placeholder='Describe of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDescription(event)}}/><br/>
 
                     <label htmlFor='location' className={style.label}>Location: <span className={style.requiredFields}>*</span></label>
                     <input id='location' type='location' name='location' title='Location of the pet' placeholder='Location of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleLocation(event)}}/><br/>
@@ -346,7 +368,7 @@ class CardLost extends React.Component {
                     <input id='date' type='date' name='date' title='Date' placeholder='Date' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDate(event)}}/><br/>
 
                     <label htmlFor='tel' className={style.label}>Phone number:</label>
-                    <input id='tel' type='tel' name='tel' title='Enter your phone number for communication' placeholder='Enter your phone number' className={style.no_frame} onChange={(event) => {this.handlePhone(event)}}/><br/>
+                    <input id='tel' type='tel' maxlength="12" onInput={(e) => e.target.value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')} name='tel' title='Enter your phone number for communication' placeholder='Enter your phone number' className={style.no_frame} onChange={(event) => {this.handlePhone(event)}}/><br/>
                     <br/>
 
                     <br/>
@@ -356,8 +378,10 @@ class CardLost extends React.Component {
 
                         <button className={style.publish} onClick={this.handlePublish}><FaPaw/> Publish</button>
 
+                        {/*<button color="secondary" className={style.cancel} onClick={event => window.location.href='/main_page/lost'}><MdClose/>Cancel</button>*/}
+
                         <Link to='/main_page/lost'>
-                            <button color="secondary" className={style.cancel}><MdClose/>Cancel</button>
+                            <button color="secondary" className={style.cancel} onClick={event => window.location.href='/main_page/lost'}><MdClose/>Cancel</button>
                         </Link>
                     </fieldset>
                     </div>

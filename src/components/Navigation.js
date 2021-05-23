@@ -48,7 +48,8 @@ const Navigation = (props) => {
                         window.location.replace('/');
                         throw new Error ();
                     }})
-                .then(data => setUsername(data))
+                .then(data => {setUsername(data); return data})
+                .then(data => localStorage.setItem('userName', data))
 
                // .catch(error => alert('To perform this action - you must login again'));
     };
@@ -67,7 +68,8 @@ const Navigation = (props) => {
     });
 
     return (
-        <div id='navDivId' className='flex-container'>
+   /*     <div id='navDivId' className='flex-container'>*/
+            <div id='navDivId' className={`flex-container ${style.fixation}`}>
             <div className={style.divHeight}><img className={`col-12 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
             <Nav tabs vertical className={style.mainPage}>
                {/* <NavItem className={style.home}>*/}

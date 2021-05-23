@@ -1,27 +1,84 @@
 import React from "react";
 import style from "../css_modules/header.module.css";
-import Posts from "./Posts";
+import {HOTELS, urlGetPosts} from "../utils/Constants";
+import ScrollToTop from "./ScrollToTop";
+import MiniCardPost from "./MiniCardPost";
 import {FaPlus} from "react-icons/all";
-
+import CardHotels from "./CardHotels";
 
 class Hotels extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            btnPostsToggle: false,
+            postsInfo: [],
+            error: ''
+        }
+    };
+
+    addNew = () => {
+        this.setState({
+            btnPostsToggle: true
+        })
+    };
+
+    componentWillMount () {
+        let token = localStorage.getItem('accessToken');
+        fetch(`${urlGetPosts + '/' + HOTELS}`, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': token
+            }
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error(response.statusText);
+                }
+            })
+            .then(data => this.setState({postsInfo: data}))
+
+            .catch(error => alert('Failed to load hotel service posts!'));
+    }
 
     render() {
         return (
             <div>
-                <div>
-                    <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPlus/> Add new</button>
-                </div>
-
-                <div className='flex-container'>
-                    <div className='row align-items-center'>
-                        <Posts className='col-9 col-sm-9'/>
-                        <div className='col-3 col-sm-3'>
-                            <img src={require(`../Images/love-clipart-pets.png`)} alt=''/>
+                {this.state.btnPostsToggle ? (
+                    <div>
+                        <CardHotels/>
+                    </div>
+                ) : (
+                    <div>
+                        <div className={`flex-container ${style.divInfo}`}>
+                            <div className='row'>
+                                <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btnAdd}`} onClick={this.addNew}><FaPlus/> Add new</button>
+                            </div>
+                        </div>
+                        <div>
+                            <ScrollToTop/>
+                            <div className={style.divPadding}>
+                                {this.state.postsInfo.map ((cardPost) => (
+                                    <MiniCardPost key={cardPost.id} postsInfo={cardPost}/>
+                                ))
+                                }
+                                {/*{this.state.postsInfo.filter((cardPost) => {
+                                    if (cardPost.type.toLowerCase().includes(this.state.type.toLowerCase()) && cardPost.location.toLowerCase().includes(this.state.location.toLowerCase()) && cardPet.breed.toLowerCase().includes(this.state.breed.toLowerCase()) && cardPet.distinction.toLowerCase().includes(this.state.distinctive.toLowerCase())) {
+                                        return true
+                                    } else {
+                                        return false
+                                    }
+                                }).map ((cardPost) => (
+                                    <MiniCard key={cardPost.id} petInfo={cardPost}/>
+                                ))
+                                }*/}
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                )
+                }
             </div>
         )
     }

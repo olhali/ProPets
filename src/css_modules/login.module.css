@@ -87,6 +87,14 @@ input[placeholder] {
     border-radius: 50px;
     float: right;
 }
+.publish:hover,
+.publish:active,
+.publish:focus,
+.cancel:hover,
+.cancel:active,
+.cancel:focus {
+    outline: none;
+}
 
 .cancel {
     background-color: lightgray;
@@ -123,6 +131,19 @@ input[placeholder] {
     margin: 0 auto;
     text-shadow: 0.1em 0.1em 0.2em rgb(255, 192, 130);
 }
+
+/*
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    !* display: none; <- Crashes Chrome on hover *!
+    -webkit-appearance: none;
+    margin: 0; !* <-- Apparently some margin are still there even though it's hidden *!
+}
+
+input[type=number] {
+    -moz-appearance:textfield; !* Firefox *!
+}
+*/
 
 /*
 .modal1 {

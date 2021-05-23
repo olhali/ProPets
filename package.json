@@ -9,12 +9,18 @@
     "bootstrap": "^4.5.3",
     "cloudinary-react": "^1.7.0",
     "react": "^16.14.0",
+    "react-animations": "^1.0.0",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^16.14.0",
     "react-icons": "^4.2.0",
     "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
+    "react-simple-animate": "^3.3.12",
+    "react-use": "^17.2.4",
+    "react-use-window-scroll": "^1.0.13",
     "reactstrap": "^8.8.1",
+    "styled-components": "^5.3.0",
     "validator": "^13.5.2"
   },
   "scripts": {

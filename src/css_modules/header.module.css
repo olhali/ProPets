@@ -33,3 +33,128 @@ header img {
     overflow: hidden; /* если элемент больше блока-родителя – обрезаем лишнее */
 }
 
+.fixationBtn {
+  /* position: fixed;
+   !*    z-index: 999;*!
+   z-index: 1;
+   !* z-index: 10 !important;*!
+   !* position: relative;*!
+  !*  display: block;
+    z-index: 99999;*!
+    !*margin-top:5em;*!
+    height: 3em;
+    width: 65.4em;
+    margin: -0.5em;*/
+
+  /*  height: 3em;
+    width: 65.4em;
+    margin: -0.5em;*/
+}
+
+.divInfo {
+    height: 5em;
+    width: 65.85em;
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
+    position: fixed;
+    z-index: 16;
+   /* margin-top: -0.6em;*/
+    margin-left: -0.1em;
+}
+
+.divPadding {
+    padding-top: 4.7em;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.scroll_to_top {
+    position: fixed;
+    bottom: 12px;
+    left: 65%;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background: rgb(255, 203, 157);
+    color: rgb(250, 155, 97);
+    font-weight: 800;
+    z-index: 1;
+}
+
+.scroll_to_top:hover {
+    width: 70px;
+    height: 70px;
+    font-size: 1em;
+    color: rgb(250, 132, 53);
+}
+
+.btnInput {
+    border: 4px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-color: white;
+    padding: 3px;
+}
+.btnInput:hover,
+.btnInput:active,
+.btnInput:focus,
+.btnInput1:hover,
+.btnInput1:active,
+.btnInput1:focus{
+    outline: none;
+    border: 4px solid rgb(67, 185, 124);
+}
+
+.btnInput1 {
+    border: 4px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-color: white;
+    padding: 3px;
+    margin-left: 2em;
+}
+
+.btnAdd {
+    border: 7px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-image: linear-gradient(rgb(255, 250, 200), rgb(67, 185, 124), rgb(255, 250, 200));
+    color: rgb(255, 192, 130);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 3px;
+    position: absolute;
+    margin-top:-1px;
+/*    right: 0; */
+}
+.btnAdd:hover,
+.btnAdd:active,
+.btnAdd:focus {
+    outline: none;
+    border: 6px solid rgb(67, 185, 124);
+}
+
+/*.scroll_to_top .icon {
+    margin-top: 10px;
+    animation: 0.5s alternate ease infinite pulse;
+}
+
+
+@keyframes pulse {
+    0% {
+        color: #001F3F;
+    }
+    100% {
+        color: #FF4136;
+    }
+}
+
+@keyframes scrollTop {
+    from {
+        transform: translateY(2px);
+    }
+    to {
+        transform: translateY(-1px);
+    }
+}*/
+

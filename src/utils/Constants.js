@@ -4,6 +4,13 @@ export const registration = 'Registration';
 export const profileData = 'ProfileData';
 export const activities = 'Activities';
 
+export const HOME = 'home';
+export const HOTELS = 'hotels';
+export const WALKING = 'walking';
+export const FOSTERING = 'fostering';
+export const VET_HELP = 'vetHelp';
+export const CARE = 'care';
+
 export const urlLogin = 'https://propets-gateway.herokuapp.com/auth/api/auth/signin';
 export const urlRegistration = 'https://propets-gateway.herokuapp.com/auth/api/auth/signup';
 export const profileName = 'https://propets-gateway.herokuapp.com/auth/api/auth/getProfileName';
@@ -13,6 +20,32 @@ export const urlChangePassword = 'https://propets-gateway.herokuapp.com/auth/api
 export const authenticate = 'https://propets-gateway.herokuapp.com/auth/api/auth/authenticate';
 export const urlUploadingPhoto = 'https://api.cloudinary.com/v1_1/dachgyj58/auto/upload';
 export const urlSaveLostPet = 'https://propets-gateway.herokuapp.com/lostAndFound/saveLostPet';
+export const urlCardLostPets = 'https://propets-gateway.herokuapp.com/lostAndFound/getLostPets';
+export const urlGetLostPetById = 'https://propets-gateway.herokuapp.com/lostAndFound/getLostPetById';
+export const urlCardFoundPets = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
+export const urlSaveFoundPet = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+export const urlGetFoundPetById = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPetById';
+
+export const urlGetPosts = 'https://propets-gateway.herokuapp.com/lostAndFound/getPosts';
+export const urlSavePost = 'https://propets-gateway.herokuapp.com/lostAndFound/savePost';
+
+/*export const urlCardPostHotels = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
+export const urlSavePostHotels = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+
+export const urlCardPostWalking = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
+export const urlSavePostWalking = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+
+export const urlCardPostFostering = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
+export const urlSavePostFostering = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+
+export const urlCardPostVetHelp = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
+export const urlSavePostVetHelp = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+
+export const urlCardPostCare = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
+export const urlSavePostCare = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';*/
+
+export const CLOUD_NAME = 'dachgyj58';
+export const CLOUD_UPLOAD_PRESET = 'photoLi';
 
 /*export const urlLogin = 'https://propets-auth-service.herokuapp.com/api/auth/signin';
 export const urlRegistration = 'https://propets-auth-service.herokuapp.com/api/auth/signup';
@@ -39,8 +72,6 @@ export const PHOTOS_UPLOADED = 'PHOTOS_UPLOADED';
 export const DELETE_UPLOADED_PHOTO = 'DELETE_UPLOADED_PHOTO';
 export const UPDATE_UPLOADED_PHOTO = 'UPDATE_UPLOADED_PHOTO';*/
 
-export const CLOUD_NAME = 'dachgyj58';
-export const CLOUD_UPLOAD_PRESET = 'photoLi';
 /*export const CLOUD_API_KEY = '371978636849623';*/
 /*export const CLOUD_API_SECRET = 'eEEni1GWZ-2x-bPqgf1hiRHPwfE';*/
 
@@ -50,3 +81,6 @@ export default async (_req, res) => {
     res.statusCode = 200;
     res.json({ signature: 'photo', timestamp: 12345 });
 };*/
+
+/*export const miniCard = 'MiniCard';
+export const cardLost = 'CardLost';*/

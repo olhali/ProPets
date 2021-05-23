@@ -17,9 +17,10 @@
 }
 
 .divHeight {
-    height: 4em;
+   /* height: 4em;*/
     padding-top: 0.2em;
     background-color: rgb(255, 203, 157);
+    width: 22em;
 }
 
 .topImg {
@@ -134,3 +135,8 @@
     width: 4em;
     border-radius: 50%;
 }
+
+.fixation {
+    position: fixed;
+ /*   z-index: 999;*/
+  }
