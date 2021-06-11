@@ -21,12 +21,14 @@
     padding-top: 0.2em;
     background-color: rgb(255, 203, 157);
     width: 22em;
+    margin-left: 0.85em;
 }
 
 .topImg {
     background: rgb(255, 203, 157);
     box-shadow: 0 3px 6px #00000029;
     opacity: 1;
+   /* height: 2em;*/
 }
 
 .link, .linkService {
@@ -64,6 +66,18 @@
     outline: none;                                         /*убирает черную рамку вокруг кнопки*/
     border: 2px solid rgb(67, 150, 124);
     color: rgb(255, 203, 157);
+    font-family: 'Krona One', sans-serif;
+}
+
+.link1 {
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    font-size: 1.1em;
+    background: linear-gradient(45deg, darkorange 35%, rgb(67, 170, 124) 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.link1:hover {
     font-family: 'Krona One', sans-serif;
 }
 
@@ -128,6 +142,18 @@
 .outTxt {
     color: rgb(250, 155, 97);
     margin-left: 1.5em;
+    text-shadow: 1px 1px 4px lightgoldenrodyellow;
+    letter-spacing: 3.5px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.cursor:hover,
+.cursor:active,
+.cursor:focus {
+    background-color: rgb(255, 203, 157);
 }
 
 .avatar {

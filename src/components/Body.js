@@ -13,6 +13,7 @@ import CardLost from "./CardLost";
 import CardFound from "./CardFound";
 import LostPetCardId from "./LostPetCardId";
 import FoundPetCardId from "./FoundPetCardId";
+import Care from "./Care";
 
 class Body extends React.Component {
 
@@ -33,6 +34,7 @@ class Body extends React.Component {
                 <Route path='/main_page/services/walking' component={Walking}/>
                 <Route path='/main_page/services/fostering' component={Fostering}/>
                 <Route path='/main_page/services/vet_help' component={VetHelp}/>
+                <Route path='/main_page/services/care' component={Care}/>
                 <Route path='/main_page/favorites' component={Favorites}/>
                 <Route path='/main_page/profile' component={Profile}/>
                 <Route component={Home}/>

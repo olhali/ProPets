@@ -1,3 +1,4 @@
+/*
 import React, { useState } from 'react';
 import {
     TabContent,
@@ -32,15 +33,15 @@ const Profile = (props) => {
         }
     };
 
-    /*const toggle = () => {
+    /!*const toggle = () => {
         setModal(!modal);
         props.hideAuthorization1();
-    };*/
+    };*!/
 
-  /*  let history = useHistory();
+  /!*  let history = useHistory();
     const handleSave = () => {
         history.push('/main_page/home');
-    };*/
+    };*!/
 
     return (
         <div>
@@ -60,8 +61,8 @@ const Profile = (props) => {
                     {profileActivitiesToggle}
                 </Row>
             </Container>
-          {/*  <Button color="secondary" onClick=''>Cancel</Button>
-            <Button color='success' className='submit' onClick={handleSave}>Save changes</Button>*/}
+          {/!*  <Button color="secondary" onClick=''>Cancel</Button>
+            <Button color='success' className='submit' onClick={handleSave}>Save changes</Button>*!/}
         </div>
     );
 };
@@ -72,7 +73,7 @@ export default Profile;
 
 
 
-{/*
+{/!*
 import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import ProfileData from "./ProfileData";
@@ -131,6 +132,7 @@ const Profile = (props) => {
 };
 
 export default Profile;
-        */}
+        *!/}
 
 
+*/

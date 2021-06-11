@@ -10,39 +10,46 @@ export const WALKING = 'walking';
 export const FOSTERING = 'fostering';
 export const VET_HELP = 'vetHelp';
 export const CARE = 'care';
+/*export const FAVORITES = 'favorites';*/
+export const hostnameExternal = 'https://84.228.171.29:3082';
+export const hostnamelocalHome = 'https://192.168.31.100:3082';
 
-export const urlLogin = 'https://propets-gateway.herokuapp.com/auth/api/auth/signin';
-export const urlRegistration = 'https://propets-gateway.herokuapp.com/auth/api/auth/signup';
-export const profileName = 'https://propets-gateway.herokuapp.com/auth/api/auth/getProfileName';
-export const urlResetPassword = 'https://propets-gateway.herokuapp.com/auth/api/auth/user/resetPassword';
-export const urlChangePassword = 'https://propets-gateway.herokuapp.com/auth/api/auth/user/changePassword';
-/*export const localChangePassword = 'http://192.168.31.25:8080/api/auth/user/changePassword';*/
-export const authenticate = 'https://propets-gateway.herokuapp.com/auth/api/auth/authenticate';
+export const urlLogin = 'https://192.168.31.100:3082/auth/api/auth/signin';
+export const urlRegistration = 'https://192.168.31.100:3082/auth/api/auth/signup';
+export const profileName = 'https://192.168.31.100:3082/auth/api/auth/getProfileName';
+export const urlResetPassword = 'https://192.168.31.100:3082/auth/api/auth/user/resetPassword';
+export const urlChangePassword = 'https://192.168.31.100:3082/auth/api/auth/user/changePassword';
+/*export const localChangePassword = 'https://192.168.31.25:8080/api/auth/user/changePassword';*/
+export const authenticate = 'https://192.168.31.100:3082/auth/api/auth/authenticate';
 export const urlUploadingPhoto = 'https://api.cloudinary.com/v1_1/dachgyj58/auto/upload';
-export const urlSaveLostPet = 'https://propets-gateway.herokuapp.com/lostAndFound/saveLostPet';
-export const urlCardLostPets = 'https://propets-gateway.herokuapp.com/lostAndFound/getLostPets';
-export const urlGetLostPetById = 'https://propets-gateway.herokuapp.com/lostAndFound/getLostPetById';
-export const urlCardFoundPets = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
-export const urlSaveFoundPet = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
-export const urlGetFoundPetById = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPetById';
+export const urlSaveLostPet = 'https://192.168.31.100:3082/lostAndFound/saveLostPet';
+export const urlCardLostPets = 'https://192.168.31.100:3082/lostAndFound/getLostPets';
+export const urlGetLostPetById = 'https://192.168.31.100:3082/lostAndFound/getLostPetById';
+export const urlCardFoundPets = 'https://192.168.31.100:3082/lostAndFound/getFoundPets';
+export const urlSaveFoundPet = 'https://192.168.31.100:3082/lostAndFound/saveFoundPet';
+export const urlGetFoundPetById = 'https://192.168.31.100:3082/lostAndFound/getFoundPetById';
 
-export const urlGetPosts = 'https://propets-gateway.herokuapp.com/lostAndFound/getPosts';
-export const urlSavePost = 'https://propets-gateway.herokuapp.com/lostAndFound/savePost';
+export const urlGetPosts = 'https://192.168.31.100:3082/lostAndFound/getPosts';
+export const urlSavePost = 'https://192.168.31.100:3082/lostAndFound/savePost';
 
-/*export const urlCardPostHotels = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
-export const urlSavePostHotels = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+export const urlGetFavorites = 'https://192.168.31.100:3082/lostAndFound/getFavorites';
+export const urlSaveFavorite = 'https://192.168.31.100:3082/lostAndFound/saveFavoritePost';
+export const urlDeleteFavorite = 'https://192.168.31.100:3082/lostAndFound/favorites';
 
-export const urlCardPostWalking = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
-export const urlSavePostWalking = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+/*export const urlCardPostHotels = 'http://192.168.31.100:3082/lostAndFound/getFoundPets';
+export const urlSavePostHotels = 'http://192.168.31.100:3082/lostAndFound/saveFoundPet';
 
-export const urlCardPostFostering = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
-export const urlSavePostFostering = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+export const urlCardPostWalking = 'http://192.168.31.100:3082/lostAndFound/getFoundPets';
+export const urlSavePostWalking = 'http://192.168.31.100:3082/lostAndFound/saveFoundPet';
 
-export const urlCardPostVetHelp = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
-export const urlSavePostVetHelp = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';
+export const urlCardPostFostering = 'http://192.168.31.100:3082/lostAndFound/getFoundPets';
+export const urlSavePostFostering = 'http://192.168.31.100:3082/lostAndFound/saveFoundPet';
 
-export const urlCardPostCare = 'https://propets-gateway.herokuapp.com/lostAndFound/getFoundPets';
-export const urlSavePostCare = 'https://propets-gateway.herokuapp.com/lostAndFound/saveFoundPet';*/
+export const urlCardPostVetHelp = 'http://192.168.31.100:3082/lostAndFound/getFoundPets';
+export const urlSavePostVetHelp = 'http://192.168.31.100:3082/lostAndFound/saveFoundPet';
+
+export const urlCardPostCare = 'http://192.168.31.100:3082/lostAndFound/getFoundPets';
+export const urlSavePostCare = 'http://192.168.31.100:3082/lostAndFound/saveFoundPet';*/
 
 export const CLOUD_NAME = 'dachgyj58';
 export const CLOUD_UPLOAD_PRESET = 'photoLi';

@@ -275,8 +275,9 @@ class CardLost extends React.Component {
                 ) : (
                     <div>
                     <fieldset>
-                        <legend className={style.legendLost}><strong>Lost your pet? Fill in all the data and publish!</strong></legend>
-                    <label htmlFor='pets' className={style.label}><strong>L O S T : </strong><span className={style.requiredFields}>*</span></label>
+                        <legend className={style.legendCard}><strong>Lost your pet? Fill in all the data and publish!</strong></legend>
+                        <div className={`flex-container ${style.divCard}`}>
+                    <label htmlFor='pets' className={style.label1}><strong>L O S T : </strong><span className={style.requiredFields}>*</span></label>
                     <input id='pets' type='text' maxlength="23" name='pets' list="petsList" title="Choose a pet that is lost" placeholder='Choose a pet that is lost' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleType(event)}}/>
                     <datalist id="petsList">
                             <option value="Another pet..."/>
@@ -293,17 +294,18 @@ class CardLost extends React.Component {
                             <option value="Parrot"/>
                             <option value="Rabbit"/>
                             <option value="Rat"/>
+                            <option value="Reptile"/>
                             <option value="Snake"/>
                             <option value="Spider"/>
                             <option value="Turtle"/>
                     </datalist>
                     <br/>
 
-                    <label htmlFor='breed' className={style.label}>Breed: </label>
+                    <label htmlFor='breed' className={style.label1}>Breed: </label>
                         <input id='breed' type='text' maxlength="23" name='breed' title="Select the breed of the pet" placeholder='Select the breed of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleBreed(event)}}/>
                         <br/>
 
-                    <label htmlFor='color' className={style.label}>Color: <span className={style.requiredFields}>*</span></label>
+                    <label htmlFor='color' className={style.label1}>Color: <span className={style.requiredFields}>*</span></label>
                     <input id='color' type='text' maxlength="23" name='color' list="colorList" title="Select the color of the pet" placeholder='Select the color of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleColor(event)}}/>
                     <datalist id="colorList">
                             <option value="Multicolor"/>
@@ -339,38 +341,38 @@ class CardLost extends React.Component {
                     </datalist>
                     <br/>
 
-                    <label htmlFor='sex' className={style.label}>Sex: <span className={style.requiredFields}>*</span></label><br/>
-                        <input type="radio" id="male" name="sex" value="male" onChange={(event) => {this.handleSex(event)}}/>
+                    <label htmlFor='sex' className={style.label1}>Sex: <span className={style.requiredFields}>*</span></label><br/>
+                        <input type="radio" id="male" name="sex" value="male" className={style.sex} onChange={(event) => {this.handleSex(event)}}/>
                         <label htmlFor="male">Male</label><br/>
-                            <input type="radio" id="female" name="sex" value="female" onChange={(event) => {this.handleSex(event)}}/>
+                            <input type="radio" id="female" name="sex" value="female" className={style.sex} onChange={(event) => {this.handleSex(event)}}/>
                             <label htmlFor="female">Female</label><br/>
-                                <input type="radio" id="unknown" name="sex" value="unknown" onChange={(event) => {this.handleSex(event)}}/>
+                                <input type="radio" id="unknown" name="sex" value="unknown" className={style.sex} onChange={(event) => {this.handleSex(event)}}/>
                                 <label htmlFor="unknown">Unknown</label><br/><br/>
 
                    {/* <label htmlFor='height' className={style.label}>Height/ cm:</label>
                     <input id='height' type='number' onInput={(e) => e.target.value = e.target.value.slice(0, 3)} name='height' min="1" title="Enter the approximate height/size of the pet" placeholder='Enter the approximate height/size of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleHeight(event)}}/><br/><br/>
 */}
-                    <label htmlFor='distinction' className={style.label}>Distinctive features:</label>
+                    <label htmlFor='distinction' className={style.label1}>Distinctive features:</label>
                     <textarea id='distinction' rows="1" maxlength="400" name='distinction' title='Enter the distinctive features of the pet' placeholder='Enter the distinctive features of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDistinction(event)}}/><br/><br/>
 
-                    <label htmlFor='description' className={style.label}>Description:</label>
+                    <label htmlFor='description' className={style.label1}>Description:</label>
                     <textarea id='description' rows="1" maxlength="400" name='description' title='Describe of the pet' placeholder='Describe of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDescription(event)}}/><br/>
 
-                    <label htmlFor='location' className={style.label}>Location: <span className={style.requiredFields}>*</span></label>
+                    <label htmlFor='location' className={style.label1}>Location: <span className={style.requiredFields}>*</span></label>
                     <input id='location' type='location' name='location' title='Location of the pet' placeholder='Location of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleLocation(event)}}/><br/>
 
                     <div>
-                        <label htmlFor='photo' className={style.label}>Pet photo:</label>
+                        <label htmlFor='photo' className={style.label1}>Pet photo:</label>
                             <PhotoUpload addImageUrl={this.addImageUrl}/>
                     </div><br/>
 
-                    <label htmlFor='date' className={style.label}>Date of lost: <span className={style.requiredFields}>*</span></label>
+                    <label htmlFor='date' className={style.label1}>Date of lost: <span className={style.requiredFields}>*</span></label>
                     <input id='date' type='date' name='date' title='Date' placeholder='Date' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDate(event)}}/><br/>
 
-                    <label htmlFor='tel' className={style.label}>Phone number:</label>
+                    <label htmlFor='tel' className={style.label1}>Phone number:</label>
                     <input id='tel' type='tel' maxlength="12" onInput={(e) => e.target.value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')} name='tel' title='Enter your phone number for communication' placeholder='Enter your phone number' className={style.no_frame} onChange={(event) => {this.handlePhone(event)}}/><br/>
                     <br/>
-
+                        </div>
                     <br/>
                     <h5><VscDebugBreakpointUnsupported className={style.footnote}/> Fields with <strong className={style.requiredFields}>*</strong> are required !</h5>
 

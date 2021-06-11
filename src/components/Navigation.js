@@ -58,6 +58,7 @@ const Navigation = (props) => {
     let history = useHistory();
     const logout = () => {
         localStorage.removeItem('accessToken');
+   /*     sessionStorage.removeItem('likes');*/
         history.push('/');
     };
 
@@ -70,8 +71,9 @@ const Navigation = (props) => {
     return (
    /*     <div id='navDivId' className='flex-container'>*/
             <div id='navDivId' className={`flex-container ${style.fixation}`}>
-            <div className={style.divHeight}><img className={`col-12 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
-            <Nav tabs vertical className={style.mainPage}>
+            <div className={`row ${style.divHeight}`}><img className={`col-5 col-sm-7 col-md-9 col-xl-11 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
+            <div className={`col-6 col-sm-8 col-md-10 col-xl`}>
+                <Nav tabs vertical className={` ${style.mainPage}`}>
                {/* <NavItem className={style.home}>*/}
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
@@ -159,6 +161,11 @@ const Navigation = (props) => {
                                 <img className={style.homeImg} src={require(`../Images/PinClipart.com_clip-art-vet_1990539.png`)} alt='VetHelp'/>VetHelp
                             </NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink tag={RRNavLink} to='/main_page/services/care' className={style.serviceLink}>
+                                <img className={style.homeImg} src={require(`../Images/care.png`)} alt='Care'/>Care
+                            </NavLink>
+                        </NavItem>
                     </Card>
                 </Collapse>
 
@@ -173,13 +180,15 @@ const Navigation = (props) => {
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{username}</NavLink>
+                    <NavLink className={style.link1}>{avatar}{username}</NavLink>
+                   {/* <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{username}</NavLink>*/}
                 </NavItem>
                 <NavItem>
-                    <NavLink onClick={logout}><RiLogoutBoxLine className={style.outImg}/><span className={style.outTxt}>L o g o u t</span></NavLink>
+                    <NavLink onClick={logout} className={style.cursor}><RiLogoutBoxLine className={style.outImg}/><span className={style.outTxt}>Logout</span></NavLink>
                 </NavItem>
                 <DropdownItem divider/>
             </Nav>
+            </div>
         </div>
     );
 };

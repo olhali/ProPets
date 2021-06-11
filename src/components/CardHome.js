@@ -2,10 +2,9 @@ import React from "react";
 import style from "../css_modules/login.module.css";
 import {
     FaPaw,
-    MdClose,
-    VscDebugBreakpointUnsupported
+    MdClose
 } from "react-icons/all";
-import {urlSavePost, urlSavePostHome} from "../utils/Constants";
+import {HOME, urlSavePost} from "../utils/Constants";
 import PhotoUpload from "./PhotoUpload";
 import {Link} from "react-router-dom";
 import {Button} from "reactstrap";
@@ -16,7 +15,6 @@ class CardHome extends React.Component {
         this.state = {
             text: '',
             imageUrls: [],
-            date: {},
             nameProfile: '',
             error: '',
             validationLabel: '',
@@ -72,10 +70,10 @@ class CardHome extends React.Component {
             return;
         }
         let postInfo = {};
+        postInfo.type = HOME;
         postInfo.text = this.state.text;
         postInfo.nameProfile = localStorage.getItem('userName');
         postInfo.imageUrls = this.state.imageUrls;
-        postInfo.date = this.state.date;
         let token = localStorage.getItem('accessToken');
         fetch(`${urlSavePost}`, {
             method: 'POST',
@@ -96,7 +94,7 @@ class CardHome extends React.Component {
                 }
             })
 
-            .catch(error => alert('Please, add text to the post!'));
+            .catch(error => alert('An error occurred while sending the post. Try again!'));
     };
 
 
@@ -111,16 +109,17 @@ class CardHome extends React.Component {
                 ) : (
                     <div>
                         <fieldset>
-                            <legend className={style.legendLost}><strong>Your new post! Simply text, add photos and publish!</strong></legend>
-                            <label htmlFor='textPost' className={style.label}>Text: </label>
-                            <textarea id='textPost' rows="1" maxlength="1500" name='textPost' title="Up to 1500 char" placeholder='Write something...' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleText(event)}}/>
+                            <legend className={style.legendCard}><strong>Your new post! Simply text, add photos and publish!</strong></legend>
+                            <div className={`flex-container ${style.divCard}`}>
+                            <label htmlFor='textPost' className={style.label1}>Text: </label>
+                            <textarea id='textPost' rows="2" name='textPost' title="Up to 1500 char" placeholder='Write something...' autoComplete='off' className={style.no_frame1} onChange={(event) => {this.handleText(event)}}/>
                             <br/>
 
                             <div>
-                                <label htmlFor='photo' className={style.label}>Photos:</label>
+                                <label htmlFor='photo' className={style.label1}>Photos:</label>
                                 <PhotoUpload addImageUrl={this.addImageUrl}/>
                             </div><br/>
-
+                            </div>
                             <br/>
 
                             {this.state.validationLabel}
@@ -130,6 +129,7 @@ class CardHome extends React.Component {
                             <Link to='/main_page/home'>
                                 <button color="secondary" className={style.cancel} onClick={event => window.location.href='/main_page/home'}><MdClose/>Cancel</button>
                             </Link>
+
                         </fieldset>
                     </div>
                 )}

@@ -4,12 +4,12 @@ import {
     FaPaw,
     MdClose
 } from "react-icons/all";
-import {urlSavePost, WALKING} from "../utils/Constants";
+import {FOSTERING, urlSavePost} from "../utils/Constants";
 import PhotoUpload from "./PhotoUpload";
 import {Link} from "react-router-dom";
 import {Button} from "reactstrap";
 
-class CardWalking extends React.Component {
+class CardFostering extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +20,7 @@ class CardWalking extends React.Component {
             validationLabel: '',
             responseAfterCard: false
         };
-        window.history.pushState("", "", '/main_page/services/walking/card_walking');
+        window.history.pushState("", "", '/main_page/services/fostering/card_fostering');
     };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -70,7 +70,7 @@ class CardWalking extends React.Component {
             return;
         }
         let postInfo = {};
-        postInfo.type = WALKING;
+        postInfo.type = FOSTERING;
         postInfo.text = this.state.text;
         postInfo.nameProfile = localStorage.getItem('userName');
         postInfo.imageUrls = this.state.imageUrls;
@@ -104,7 +104,7 @@ class CardWalking extends React.Component {
                 {this.state.responseAfterCard ? (
                     <div>
                         <p className={style.published}>Published</p>
-                        <Button color='success' className={style.publishedOk} onClick={event => window.location.href='/main_page/services/walking'}>OK</Button>
+                        <Button color='success' className={style.publishedOk} onClick={event => window.location.href='/main_page/services/fostering'}>OK</Button>
                     </div>
                 ) : (
                     <div>
@@ -126,8 +126,8 @@ class CardWalking extends React.Component {
 
                             <button className={style.publish} onClick={this.handlePublish}><FaPaw/> Publish</button>
 
-                            <Link to='/main_page/services/walking'>
-                                <button color="secondary" className={style.cancel} onClick={event => window.location.href='/main_page/services/walking'}><MdClose/>Cancel</button>
+                            <Link to='/main_page/services/fostering'>
+                                <button color="secondary" className={style.cancel} onClick={event => window.location.href='/main_page/services/fostering'}><MdClose/>Cancel</button>
                             </Link>
                         </fieldset>
                     </div>
@@ -136,4 +136,4 @@ class CardWalking extends React.Component {
         );
     }
 }
-export default CardWalking;
+export default CardFostering;

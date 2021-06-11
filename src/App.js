@@ -1,4 +1,5 @@
 import React from 'react';
+import http from 'http';
 import './App.css';
 import StartPage from "./components/StartPage";
 import MainPage from "./components/MainPage";
@@ -14,6 +15,117 @@ class App extends React.Component {
             page: 'start_page'
         }
     }
+
+   /* componentDidMount() {
+        this.func1();
+        this.func2();
+        this.func3();
+        this.func4();
+        this.func5();
+
+    }
+
+    func1(){
+        var options = {
+            host: 'https://propets-eurekaservice.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func2(){
+        var options = {
+            host: 'https://propets-auth-service.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func3(){
+        var options = {
+            host: 'http://propets-lostandfoundservice.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func4(){
+        var options = {
+            host: 'https://propets-gateway.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func5(){
+        var options = {
+            host: 'https://propets-elastic-service.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }*/
+
+
 
     /*changePage = (page) => {
         this.setState({

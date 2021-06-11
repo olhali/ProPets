@@ -1,13 +1,13 @@
 import React from "react";
 import style from "../css_modules/header.module.css";
-import {HOTELS, urlGetFavorites, urlGetPosts} from "../utils/Constants";
+import {CARE, urlGetFavorites, urlGetPosts} from "../utils/Constants";
 import ScrollToTop from "./ScrollToTop";
 import MiniCardPost from "./MiniCardPost";
 import {FaPlus} from "react-icons/all";
-import CardHotels from "./CardHotels";
+import CardCare from "./CardCare";
 import {BeatLoader} from "react-spinners";
 
-class Hotels extends React.Component {
+class Care extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,7 +47,7 @@ class Hotels extends React.Component {
 
     componentWillMount () {
         let token = localStorage.getItem('accessToken');
-        fetch(`${urlGetPosts + '/' + HOTELS}`, {
+        fetch(`${urlGetPosts + '/' + CARE}`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',
@@ -65,7 +65,7 @@ class Hotels extends React.Component {
                 loading: false,
                 postsInfo: data}))
 
-            .catch(error => alert('Failed to load hotel service posts!'));
+            .catch(error => alert('Failed to load pet care service posts!'));
 
         fetch(`${urlGetFavorites}`, {
             method: 'GET',
@@ -93,7 +93,7 @@ class Hotels extends React.Component {
             <div>
                 {this.state.btnPostsToggle ? (
                     <div>
-                        <CardHotels/>
+                        <CardCare/>
                     </div>
                 ) : (
                     <div>
@@ -101,7 +101,7 @@ class Hotels extends React.Component {
                             <div className='row'>
                                 <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
                                 <div className='col-9'>
-                                    <p className={`${style.gradient_text}`}><strong> Go to vacations - we'll take care of your pet!</strong></p>
+                                    <p className={`${style.gradient_text1}`}><strong> With us, your pet will look its best, as we provide<br/> quality care from the best specialists!</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -144,4 +144,4 @@ class Hotels extends React.Component {
         )
     }
 }
-export default Hotels;
+export default Care;
