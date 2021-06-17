@@ -1,61 +1,116 @@
 import React from "react";
 import style from "../css_modules/header.module.css";
-import {FaPlus} from "react-icons/all";
+import MiniCard from "./MiniCard";
+import {urlCardFoundPets} from "../utils/Constants";
+import AddPostLostFound from "./AddPostLostFound";
+import ScrollToTop from "./ScrollToTop";
+import CardFound from "./CardFound";
+import {BeatLoader} from "react-spinners";
 
 class Found extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            openCardFound: false
+            btnPostsToggle: false,
+            petsInfo: [],
+            error: '',
+            type: '',
+            breed: '',
+            distinctive: '',
+            location: '',
+            loading: true
         }
-    }
+    };
 
-    clickCardFoundHandler = () => {
+    addNew = () => {
         this.setState({
-            openCardFound: true
+            btnPostsToggle: true
         })
     };
+
+    searchType = (e) => {
+        this.setState({
+            type: e.target.value
+        })
+    };
+    searchBreed = (e) => {
+        this.setState({
+            breed: e.target.value
+        })
+    };
+    searchDistinctive = (e) => {
+        this.setState({
+            distinctive: e.target.value
+        })
+    };
+    searchLocation = (e) => {
+        this.setState({
+            location: e.target.value
+        })
+    };
+
+    componentWillMount () {
+        let token = localStorage.getItem('accessToken');
+        fetch(`${urlCardFoundPets}`, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': token
+            }
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error(response.statusText);
+                }
+            })
+            .then(data => this.setState({
+                loading: false,
+                petsInfo: data}))
+
+            .catch(error => alert('Failed to load found pets!'));
+    }
 
     render() {
         return (
             <div>
-                <div>
-                    <button onClick={() => this.clickCardFoundHandler()} className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPlus/> Add new</button>
-                </div>
+                {this.state.btnPostsToggle ? (
+                    <div>
+                        <CardFound/>
+                    </div>
+                ) : (
+                    <div>
+                        <AddPostLostFound addNew={this.addNew} searchType={this.searchType} searchBreed={this.searchBreed} searchDistinctive={this.searchDistinctive} searchLocation={this.searchLocation}/>
+                        <div>
+                            <ScrollToTop/>
+                            {this.state.loading ? (
+                                <div>
+                                    <p className={style.loading}><strong>Loading</strong></p>
+                                    <div className={style.loader}>
+                                        <BeatLoader loading size={28} color='rgb(67, 185, 124)'/>
+                                    </div>
+                                </div>
+                            ) : (
+                            <div className={style.divPadding}>
+                                {this.state.petsInfo.filter((cardPet) => {
+                                    if (cardPet.type.toLowerCase().includes(this.state.type.toLowerCase()) && cardPet.location.toLowerCase().includes(this.state.location.toLowerCase()) && cardPet.breed.toLowerCase().includes(this.state.breed.toLowerCase()) && cardPet.distinction.toLowerCase().includes(this.state.distinctive.toLowerCase())) {
+                                        return true
+                                    } else {
+                                        return false
+                                    }
+                                }).map ((cardPet) => (
+                                    <MiniCard key={cardPet.id} petInfo={cardPet}/>
+                                ))
+                                }
+                            </div>
+                                )}
+                        </div>
+                    </div>
+                )
+                }
             </div>
         )
     }
 }
 export default Found;
-
-
-/*
-import React from "react";
-import style from "../css_modules/header.module.css";
-import Posts from "./Posts";
-import {FaSearch, FaPaw} from "react-icons/all";
-
-class Found extends React.Component {
-
-    render() {
-        return (
-            <div>
-                <div>
-                    <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaSearch/> I lost my pet</button>
-                    <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btn}`}><FaPaw/> I found a pet</button>
-                </div>
-
-                <div className='flex-container'>
-                    <div className='row align-items-center'>
-                        <Posts className='col-9 col-sm-9'/>
-                        <div className='col-3 col-sm-3'>
-                            <img src={require(`../Images/love-clipart-pets.png`)} alt=''/>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        )
-    }
-}
-export default Found;*/

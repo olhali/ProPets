@@ -1,13 +1,13 @@
 import React from "react";
 import style from "../css_modules/header.module.css";
-import {urlGetFavorites, urlGetPosts, WALKING} from "../utils/Constants";
+import {CARE, urlGetFavorites, urlGetPosts} from "../utils/Constants";
 import ScrollToTop from "./ScrollToTop";
 import MiniCardPost from "./MiniCardPost";
 import {FaPlus} from "react-icons/all";
-import CardWalking from "./CardWalking";
+import CardCare from "./CardCare";
 import {BeatLoader} from "react-spinners";
 
-class Walking extends React.Component {
+class Care extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,7 +47,7 @@ class Walking extends React.Component {
 
     componentWillMount () {
         let token = localStorage.getItem('accessToken');
-        fetch(`${urlGetPosts + '/' + WALKING}`, {
+        fetch(`${urlGetPosts + '/' + CARE}`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',
@@ -65,7 +65,7 @@ class Walking extends React.Component {
                 loading: false,
                 postsInfo: data}))
 
-            .catch(error => alert('Failed to load walking service posts!'));
+            .catch(error => alert('Failed to load pet care service posts!'));
 
         fetch(`${urlGetFavorites}`, {
             method: 'GET',
@@ -93,7 +93,7 @@ class Walking extends React.Component {
             <div>
                 {this.state.btnPostsToggle ? (
                     <div>
-                        <CardWalking/>
+                        <CardCare/>
                     </div>
                 ) : (
                     <div>
@@ -101,7 +101,7 @@ class Walking extends React.Component {
                             <div className='row'>
                                 <button className={`btn_animation col-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
                                 <div className='col-9'>
-                                    <p className={`${style.gradient_text}`}><strong> No time tonight? We have a solution!</strong></p>
+                                    <p className={`${style.gradient_text1}`}><strong> With us, your pet will look its best, as we provide<br/> quality care from the best specialists!</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -134,16 +134,6 @@ class Walking extends React.Component {
                                     }
                                 )
                                 }
-                                {/*{this.state.postsInfo.filter((cardPost) => {
-                                    if (cardPost.type.toLowerCase().includes(this.state.type.toLowerCase()) && cardPost.location.toLowerCase().includes(this.state.location.toLowerCase()) && cardPet.breed.toLowerCase().includes(this.state.breed.toLowerCase()) && cardPet.distinction.toLowerCase().includes(this.state.distinctive.toLowerCase())) {
-                                        return true
-                                    } else {
-                                        return false
-                                    }
-                                }).map ((cardPost) => (
-                                    <MiniCard key={cardPost.id} petInfo={cardPost}/>
-                                ))
-                                }*/}
                             </div>
                                 )}
                         </div>
@@ -154,4 +144,4 @@ class Walking extends React.Component {
         )
     }
 }
-export default Walking;
+export default Care;

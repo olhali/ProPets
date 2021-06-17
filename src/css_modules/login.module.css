@@ -11,20 +11,54 @@
     outline: none;
     width: 70%;
     /*margin-right: -4.5em;*/
+    background-color: lightyellow;
+}
+
+.no_frame1 {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: rgb(67, 170, 124);
+    /*text-decoration: underline rgb(255, 203, 157);*/
+    outline: none;
+    width: 90%;
+    margin-left: 6em;
+    /*margin-right: -4.5em;*/
+    background-color: lightyellow;
 }
 
 .label {
+     padding-right: 0.5em;
+     margin-top: 1em;
+     /*margin-left: -3.5em;
+     margin-right: 0.7em;*/
+     width: 30%;
+     /*clear: left;*/
+     text-align: left;
+     /*   padding-right: 10px;*/
+     font-weight: bold;
+     color: rgb(250, 132, 53);
+     text-shadow: 0.2em 0.1em 0.3em rgb(255, 192, 130);
+ }
+
+.label1 {
     padding-right: 0.5em;
-    margin-top: 1em;
+    padding-left: 0.45em;
+    margin-top: 1.5em;
     /*margin-left: -3.5em;
     margin-right: 0.7em;*/
     width: 30%;
     /*clear: left;*/
     text-align: left;
- /*   padding-right: 10px;*/
+    /*   padding-right: 10px;*/
     font-weight: bold;
     color: rgb(250, 132, 53);
     text-shadow: 0.2em 0.1em 0.3em rgb(255, 192, 130);
+}
+
+.sex {
+    margin-left: 31%;
+    margin-right: 0.2em;
 }
 
 form > p {
@@ -43,6 +77,13 @@ input:focus::-webkit-input-placeholder {
 
 input[placeholder] {
     text-overflow: ellipsis;
+}
+
+.heightForgot{
+    height: 6em;
+    color: rgb(67, 170, 124);
+    cursor: pointer;
+    float: left;
 }
 
 .btn_forgot:hover {
@@ -72,10 +113,68 @@ input[placeholder] {
     font-size: 2em;
 }
 
-.legendLost, .legendFound {
+/*.legendLost, .legendFound {
     color: rgb(67, 170, 124);
     font-size: 2em;
     text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
+    text-align: center;
+}*/
+
+.legendCard {
+    color: rgb(67, 170, 124);
+   /* font-size: 2em;*/
+    font-size: 2.35em;
+    text-shadow: 0.1em 0.1em 0.2em lightyellow;
+    text-align: center;
+    height: 2.1em;
+   /* width: 65.85em;*/
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+   /* opacity: 1;*/
+    /*position: fixed;*/
+    /*z-index: 16;*/
+    margin-bottom: -0.1em;
+    margin-left: 0;
+    padding-top: 0.4em;
+    overflow: hidden;
+}
+/*.legendCard1 {
+    color: rgb(67, 170, 124);
+    font-size: 1.5em;
+    text-shadow: 0.1em 0.1em 0.2em lightyellow;
+    text-align: center;
+    height: 3.3em;
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    margin-bottom: -0.1em;
+    margin-left: 0;
+    padding-top: 0.4em;
+    line-height: 1.5em;overflow: hidden;
+}*/
+
+.divCard {
+    overflow: hidden;
+    border: 3px outset rgb(255, 192, 130);
+    /*box-shadow: 0.2em 0.2em 0.4em rgb(255, 192, 130);
+    background-color: rgb(255, 250, 200);*/
+    background-color: lightyellow;
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    margin-top: 4px;
+  /*  margin-left: 0.1em;*/
+    /*padding-left: 1em;*/
+    padding-right: 1em;
+    /*word-wrap:break-word;*/
+    word-break:break-all;
+}
+.divCard1 {
+    overflow: hidden;
+    border: 3px outset rgb(255, 192, 130);
+    background-color: lightyellow;
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    margin-top: 4px;
+    padding-right: 1em;
 }
 
 .publish {
@@ -86,6 +185,16 @@ input[placeholder] {
     border: 3px solid rgb(67, 150, 124);
     border-radius: 50px;
     float: right;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
+.publish:hover,
+.publish:active,
+.publish:focus,
+.cancel:hover,
+.cancel:active,
+.cancel:focus {
+    outline: none;
 }
 
 .cancel {
@@ -97,13 +206,16 @@ input[placeholder] {
     float: right;
     color: gray;
     margin-right: 0.5em;
+    margin-top: -0.5em;
 }
 
 .labelLostFound {
     font-weight: bold;
     color: red;
     font-size: 1.5em;
-    margin: auto;
+ /*   margin: auto;*/
+    margin-bottom: 0.8em;
+    margin-left: 5em;
     display: table;
     text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
 }
@@ -123,6 +235,19 @@ input[placeholder] {
     margin: 0 auto;
     text-shadow: 0.1em 0.1em 0.2em rgb(255, 192, 130);
 }
+
+/*
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    !* display: none; <- Crashes Chrome on hover *!
+    -webkit-appearance: none;
+    margin: 0; !* <-- Apparently some margin are still there even though it's hidden *!
+}
+
+input[type=number] {
+    -moz-appearance:textfield; !* Firefox *!
+}
+*/
 
 /*
 .modal1 {

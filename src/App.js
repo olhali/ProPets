@@ -1,4 +1,5 @@
 import React from 'react';
+import http from 'http';
 import './App.css';
 import StartPage from "./components/StartPage";
 import MainPage from "./components/MainPage";
@@ -15,6 +16,117 @@ class App extends React.Component {
         }
     }
 
+   /* componentDidMount() {
+        this.func1();
+        this.func2();
+        this.func3();
+        this.func4();
+        this.func5();
+
+    }
+
+    func1(){
+        var options = {
+            host: 'https://propets-eurekaservice.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func2(){
+        var options = {
+            host: 'https://propets-auth-service.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func3(){
+        var options = {
+            host: 'http://propets-lostandfoundservice.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func4(){
+        var options = {
+            host: 'https://propets-gateway.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }
+
+    func5(){
+        var options = {
+            host: 'https://propets-elastic-service.herokuapp.com/',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }*/
+
+
+
     /*changePage = (page) => {
         this.setState({
             page: page
@@ -25,13 +137,14 @@ class App extends React.Component {
         return (
             <Switch>
                 <Route path={['/', '/start_page']} exact component={StartPage}/>
-                <Route path={['/main_page', '/main_page/:id', '/main_page/services/:id', '/main_page/lost/:id']} exact render={() => <MainPage changePage={this.changePage}/>}/>
+               {/* <Route path={['/main_page', '/main_page/:id', '/main_page/services/:id', '/main_page/lost/card/:petId', '/main_page/found/card/:petId']} exact render={() => <MainPage changePage={this.changePage}/>}/>*/}
+                <Route path={['/main_page', '/main_page/:id', '/main_page/services/:id', '/main_page/lost/:id', '/main_page/found/:id', '/main_page/lost/card/:petId', '/main_page/found/card/:petId']} exact render={() => <MainPage changePage={this.changePage}/>}/>
             {/*<Route path={['/main_page', '/main_page/:id', '/main_page/services/:id', '/main_page/lost/:id', '/main_page/found/:id']} exact render={() => <MainPage changePage={this.changePage}/>}/>*/}
            {/*     <Route path='/main_page/lost/card_lost' exact component={CardLost}/>
                 <Route path='/main_page/found/card_found' exact component={CardFound}/>*/}
                {/* <Route path='/main_page' render={(props) => (<MainPage {...props} changePage={this.changePage}/>)}/>*/}
              {/*   <Route path='/main_page/lost/:id' component={CardLost}/>*/}
-               <Route path='/reset_password' component={ResetPassword}/>
+                <Route path='/reset_password' component={ResetPassword}/>
                 <Route component={StartPage}/>
             </Switch>
         )

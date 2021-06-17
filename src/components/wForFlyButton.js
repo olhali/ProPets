@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import style from '../css_modules/header.module.css';
 
@@ -104,4 +105,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default Header;*/

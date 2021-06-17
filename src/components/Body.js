@@ -3,7 +3,6 @@ import {Route, Switch} from "react-router-dom";
 import Home from "./Home";
 import Lost from "./Lost";
 import Found from "./Found";
-import Services from "./Services";
 import Favorites from "./Favorites";
 import Profile from "./Profile";
 import Hotels from "./Hotels";
@@ -12,6 +11,9 @@ import Fostering from "./Fostering";
 import VetHelp from "./VetHelp";
 import CardLost from "./CardLost";
 import CardFound from "./CardFound";
+import LostPetCardId from "./LostPetCardId";
+import FoundPetCardId from "./FoundPetCardId";
+import Care from "./Care";
 
 class Body extends React.Component {
 
@@ -21,14 +23,18 @@ class Body extends React.Component {
                 <Route path='/main_page/home' component={Home}/>
                {/* <Route path='/main_page/lost' component={Lost}/>*/}
                {/* <Route path={['/main_page/lost', '/main_page/lost/:id']} exact render={() => <Lost/>} />*/}
-                <Route path='/main_page/lost' component={Lost}/>
+               <Route path="/main_page/lost/card/:petId" component={LostPetCardId}/>
+               {/* <Route path="/main_page/lost/card/:petId" exact render={(props) => (<LostPetCardId match={props.match}/>)}/>*/}
+               <Route path='/main_page/lost' component={Lost}/>
                 <Route path='/main_page/found' component={Found}/>
+                <Route path="/main_page/found/card/:petId" component={FoundPetCardId}/>
                 {/*<Route path='/main_page/lost/card_lost' component={CardLost}/>
                 <Route path='/main_page/found/card_found' component={CardFound}/>*/}
                 <Route path='/main_page/services/hotels' component={Hotels}/>
                 <Route path='/main_page/services/walking' component={Walking}/>
                 <Route path='/main_page/services/fostering' component={Fostering}/>
                 <Route path='/main_page/services/vet_help' component={VetHelp}/>
+                <Route path='/main_page/services/care' component={Care}/>
                 <Route path='/main_page/favorites' component={Favorites}/>
                 <Route path='/main_page/profile' component={Profile}/>
                 <Route component={Home}/>

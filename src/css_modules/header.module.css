@@ -33,3 +33,275 @@ header img {
     overflow: hidden; /* если элемент больше блока-родителя – обрезаем лишнее */
 }
 
+.fixationBtn {
+  /* position: fixed;
+   !*    z-index: 999;*!
+   z-index: 1;
+   !* z-index: 10 !important;*!
+   !* position: relative;*!
+  !*  display: block;
+    z-index: 99999;*!
+    !*margin-top:5em;*!
+    height: 3em;
+    width: 65.4em;
+    margin: -0.5em;*/
+
+  /*  height: 3em;
+    width: 65.4em;
+    margin: -0.5em;*/
+}
+
+.divInfo {
+    height: 5em;
+    max-width: 65.85em;
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
+    /*position: fixed;*/
+    /*z-index: 16;*/
+   /* margin-top: -0.6em;*/
+   /* margin-left: -0.1em;*/
+   /* white-space: pre-wrap;*/
+    overflow: hidden;
+   /* left: 6em;
+    right: 0.9em;*/
+  /*  height: 70px;*/
+   /* width: 73%;*/
+/*    float: top;*/
+    /*transform: translateX(-33%);
+      left: 50%;*/
+    /*-webkit-transform: translateZ(0);*/
+    position: sticky;
+    z-index: 16;
+    top: 0;
+    /*overflow: auto*/
+}
+
+.divFrame {
+    /*position: fixed;
+    z-index: 17;
+    height: 5em;
+    width: 66em;
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    opacity: 1;
+    overflow: hidden;
+    margin-left: -0.2em;*/
+/*
+      word-break: normal;
+    word-wrap: break-word;
+    text-overflow: ellipsis;*/
+
+}
+
+.divPadding {
+   /* padding-top: 4.7em;*/
+    margin-top: -0.35em;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.scroll_to_top {
+    position: fixed;
+    bottom: 12px;
+    left: 55%;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background: rgb(255, 203, 157);
+    color: rgb(250, 155, 97);
+    font-weight: 800;
+    z-index: 1;
+}
+
+.scroll_to_top:hover {
+    width: 70px;
+    height: 70px;
+    font-size: 1em;
+    color: rgb(250, 132, 53);
+}
+
+.btnInput {
+    border: 4px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-color: white;
+    padding: 3px;
+}
+.btnInput:hover,
+.btnInput:active,
+.btnInput:focus,
+.btnInput1:hover,
+.btnInput1:active,
+.btnInput1:focus{
+    outline: none;
+    border: 4px solid rgb(67, 185, 124);
+}
+
+.btnInput1 {
+    border: 4px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-color: white;
+    padding: 3px;
+    margin-left: 2em;
+}
+
+.btnAdd {
+    border: 7px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-image: linear-gradient(rgb(255, 250, 200), rgb(67, 185, 124), rgb(255, 250, 200));
+    color: rgb(255, 192, 130);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 3px;
+    position: absolute;
+    margin-top:-1px;
+/*    right: 0; */
+}
+.btnAdd:hover,
+.btnAdd:active,
+.btnAdd:focus,
+.btnAdd1:hover,
+.btnAdd1:active,
+.btnAdd1:focus{
+    outline: none;
+    border: 6px solid rgb(67, 185, 124);
+}
+
+.btnAdd1 {
+    border: 7px solid rgb(255, 192, 145);
+    border-radius: 50px;            /* Rounded borders */
+    background-image: linear-gradient(rgb(255, 250, 200), rgb(67, 185, 124), rgb(255, 250, 200));
+    color: rgb(255, 192, 130);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 3px;
+    position: absolute;
+    /*margin-top: 1.2em;*/
+    /*    right: 0; */
+    margin-top: 0.9em;
+}
+
+/*.legendText {
+    color: rgb(67, 170, 124);
+    font-size: 2em;
+    text-shadow: 0.1em 0.1em 0.2em rgb(255, 250, 200);
+}*/
+
+.gradient_text {
+  /*  font-family: 'Rubik One', sans-serif;*/
+    font-size: 1.7em;
+   /* text-transform: uppercase;*/
+    background: linear-gradient(45deg, rgb(67, 185, 124) 25%, rgb(67, 150, 104) 40%, yellowgreen, darkorange, rgb(67, 185, 124));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 2.7;
+    text-align: center;
+/*    margin-left: 1.5em;*/
+ /*   color: #0B2349;*/
+   /* display: table;*/
+    /*margin: 20px auto;*/
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.gradient_text1 {
+   /* font-size: 1.7em;*/
+    background: linear-gradient(45deg, rgb(67, 185, 124) 25%, rgb(67, 150, 104) 40%, yellowgreen, darkorange, rgb(67, 185, 124));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  /*  line-height: 1.4em;*/
+    text-align: center;
+    font-size: 1.5em;   /*font-size: 2.38em;*/
+    line-height: 1.5em;
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+}
+
+.loading {
+    padding-top: 2em;
+    padding-left: 2em;
+    font-size: 1.8em;
+    background: linear-gradient(15deg, rgb(67, 185, 124) 25%,  rgb(67, 185, 124), darkorange, rgb(67, 150, 104) 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 2.7;
+    text-align: center;
+    letter-spacing: 7px;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5em;
+    padding-left: 3.5em;
+}
+
+/*.pouring {
+    font-size: 2em;
+   !* line-height: 50px;
+    font-family: Verdana, sans-serif;
+    font-weight: 900;*!
+    position: relative;
+    background: #000;
+    overflow: hidden;
+   !* text-transform: uppercase;
+    text-align: center;*!
+    color: #fff;
+}
+.pouring:before {
+    mix-blend-mode: multiply;
+    content: '';
+    position: absolute;
+    filter: blur(10px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   !* mix-blend-mode: screen;*!
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, rgb(255, 250, 200) 1em, rgb(67, 185, 124) 50%), repeating-linear-gradient(45deg, #337AB7, #337AB7 1em, #FFF 1em, #BFE2FF 50%);
+    background-size: 3em 3em, 2em 2em;
+    animation-name: ani;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes ani {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+@media (max-width:690px) {
+    .pouring {font-size: 20px;}
+}*/
+
+/*.scroll_to_top .icon {
+    margin-top: 10px;
+    animation: 0.5s alternate ease infinite pulse;
+}
+
+
+@keyframes pulse {
+    0% {
+        color: #001F3F;
+    }
+    100% {
+        color: #FF4136;
+    }
+}
+
+@keyframes scrollTop {
+    from {
+        transform: translateY(2px);
+    }
+    to {
+        transform: translateY(-1px);
+    }
+}*/
+

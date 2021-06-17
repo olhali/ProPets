@@ -58,10 +58,10 @@ class MainPage extends React.Component {
             return (
                 <div className='container-fluid content'>
                     <Row>
-                        <Col xs={3} md={3}>
+                        <Col xs={2} sm={3} md={3} lg={3}>
                             <Navigation/>
                         </Col>
-                        <Col xs={9} md={9}>
+                        <Col xs={10} sm={9} md={9} lg={9}>
                             <Body/>
                         </Col>
                     </Row>
