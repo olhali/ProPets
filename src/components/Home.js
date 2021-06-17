@@ -100,8 +100,8 @@ class Home extends React.Component {
                     <div>
                         <div className={`flex-container ${style.divInfo}`}>
                             <div className='row'>
-                                <button className={`btn_animation col-xs-3 col-sm-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
-                                <div className='col-xs-9 col-sm-9 col-md-9 col-xl-9'>
+                                <button className={`btn_animation col-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
+                                <div className='col-9'>
                                     <p className={`${style.gradient_text1}`}><strong> Share news about pets, their achievements, <br/>interesting stories with their participation and much more!</strong></p>
                                 </div>
                             </div>

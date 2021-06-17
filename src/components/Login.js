@@ -34,7 +34,9 @@ class SignIn extends React.Component {
                         <input id='user_password' type='password' name='password' title='Enter your password' placeholder='Enter your password' autoComplete='off' required className={style.no_frame} onChange={(event) => {this.props.handlePassword(event)}}/><br/>
 
                         <br/>
-                     <p className={`position-fixed ${style.btn_forgot}`} onClick={() => this.clickShowModalForEmailEntryHandler()}><ins>Forgot password?</ins></p><br/><br/>
+                        <div className={style.heightForgot}>
+                     <p className={style.btn_forgot} onClick={() => this.clickShowModalForEmailEntryHandler()}><ins>Forgot password?</ins></p><br/><br/>
+                        </div>
                      <ForgotPassword showModalForEmailEntry={this.state.showModalForEmailEntry} hideModalForEmail={this.hideModalForEmail}/>
                         {/* <a href='#'>Forgot password?</a>*/}
                  </form>

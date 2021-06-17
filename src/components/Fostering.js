@@ -99,7 +99,7 @@ class Fostering extends React.Component {
                     <div>
                         <div className={`flex-container ${style.divInfo}`}>
                             <div className='row'>
-                                <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
+                                <button className={`btn_animation col-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
                                 <div className='col-9'>
                                     <p className={`${style.gradient_text1}`}><strong> In adoption we trust! Give a home for a pet <br/>and you will receive a lot of love in return!</strong></p>
                                 </div>

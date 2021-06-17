@@ -43,7 +43,7 @@
 
 .label1 {
     padding-right: 0.5em;
-    padding-left: 0.5em;
+    padding-left: 0.45em;
     margin-top: 1.5em;
     /*margin-left: -3.5em;
     margin-right: 0.7em;*/
@@ -57,7 +57,7 @@
 }
 
 .sex {
-    margin-left: 19.5em;
+    margin-left: 31%;
     margin-right: 0.2em;
 }
 
@@ -77,6 +77,13 @@ input:focus::-webkit-input-placeholder {
 
 input[placeholder] {
     text-overflow: ellipsis;
+}
+
+.heightForgot{
+    height: 6em;
+    color: rgb(67, 170, 124);
+    cursor: pointer;
+    float: left;
 }
 
 .btn_forgot:hover {
@@ -115,10 +122,11 @@ input[placeholder] {
 
 .legendCard {
     color: rgb(67, 170, 124);
-    font-size: 2em;
-    text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
+   /* font-size: 2em;*/
+    font-size: 2.35em;
+    text-shadow: 0.1em 0.1em 0.2em lightyellow;
     text-align: center;
-    height: 2.5em;
+    height: 2.1em;
    /* width: 65.85em;*/
     background: rgb(255, 203, 157);
     box-shadow: 0 3px 6px #00000029;
@@ -128,21 +136,45 @@ input[placeholder] {
     margin-bottom: -0.1em;
     margin-left: 0;
     padding-top: 0.4em;
+    overflow: hidden;
 }
+/*.legendCard1 {
+    color: rgb(67, 170, 124);
+    font-size: 1.5em;
+    text-shadow: 0.1em 0.1em 0.2em lightyellow;
+    text-align: center;
+    height: 3.3em;
+    background: rgb(255, 203, 157);
+    box-shadow: 0 3px 6px #00000029;
+    margin-bottom: -0.1em;
+    margin-left: 0;
+    padding-top: 0.4em;
+    line-height: 1.5em;overflow: hidden;
+}*/
 
 .divCard {
+    overflow: hidden;
     border: 3px outset rgb(255, 192, 130);
     /*box-shadow: 0.2em 0.2em 0.4em rgb(255, 192, 130);
     background-color: rgb(255, 250, 200);*/
     background-color: lightyellow;
     box-shadow: 0 3px 6px rgb(255, 203, 157);
     opacity: 1;
-    margin-top: 8px;
+    margin-top: 4px;
   /*  margin-left: 0.1em;*/
     /*padding-left: 1em;*/
     padding-right: 1em;
     /*word-wrap:break-word;*/
     word-break:break-all;
+}
+.divCard1 {
+    overflow: hidden;
+    border: 3px outset rgb(255, 192, 130);
+    background-color: lightyellow;
+    box-shadow: 0 3px 6px rgb(255, 203, 157);
+    opacity: 1;
+    margin-top: 4px;
+    padding-right: 1em;
 }
 
 .publish {
@@ -181,7 +213,9 @@ input[placeholder] {
     font-weight: bold;
     color: red;
     font-size: 1.5em;
-    margin: auto;
+ /*   margin: auto;*/
+    margin-bottom: 0.8em;
+    margin-left: 5em;
     display: table;
     text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
 }

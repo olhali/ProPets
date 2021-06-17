@@ -5,9 +5,10 @@
     background-color: rgb(255, 243, 200);
     box-shadow: 0 3px 6px rgb(255, 203, 157);
     opacity: 1;
-    margin-top: 8px;
+    /*margin-top: 8px;*/
+    margin-top: 5.5px;
     /*padding-left: 1em;*/
-    padding-right: 1em;
+    padding-right: 1.5em;
     /*word-wrap:break-word;*/
     /*word-break:break-all;*/
     white-space: pre-wrap;
@@ -22,9 +23,16 @@
 .textPost1 {
     color: rgb(67, 170, 124);
     font-weight: bold;
-    margin-left: 4em;
+    margin-left: 4.5em;
 }
 
+.number {
+    cursor: pointer;
+    /*word-wrap:break-word;*/
+    /*word-break:break-all;*/
+      white-space: pre-wrap;
+      word-break: normal;
+}
 .number:hover {
     cursor: pointer;
     color: rgb(255, 192, 130);
@@ -67,16 +75,36 @@
     height: 20em;
     /*width: 18em;*/
     /*  margin-left: 2.35em;*/
-    margin-left: 8em;
+   /* margin-left: 8em;*/
    /* margin-top: 0.5em;*/
-    margin-bottom: 0.25em;
+   /* margin-bottom: 0.25em;*/
+    margin-bottom: 1em;
    /* box-shadow: 0.4em 0.1em 0.5em rgb(255, 192, 130);*/
-    display: inline-block;
+    /*display: inline-block;*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     overflow: hidden;
 }
 
+/*.image2 {
+    height: 20em;
+    width: 19em;
+    !*  margin-left: 2.35em;*!
+    margin-left: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+    !* box-shadow: 0.4em 0.1em 0.5em rgb(255, 192, 130);*!
+   !* display: inline-block;
+    overflow: hidden;*!
+}*/
+
 .nextPrevIcons {
     background-color: rgb(255, 192, 145);
+}
+
+.nextPrevIcons1 {
+    opacity: 0;
 }
 
 .emptyDiv {
@@ -118,7 +146,7 @@
     text-align: center;
 }
 .avatar1 {
-    margin-left: 0.4em;
+    margin-left: 1em;
     margin-right: 0.5em;
     margin-top: 0.5em;
     width: 2.5em;
@@ -127,11 +155,11 @@
 }
 
 .textCard {
-    margin-left: 3em;
+    margin-left: 2.6em;
     text-align: justify;
     white-space: pre-wrap;
     word-break: normal;
-    margin-right: -3.5em;
+    margin-right: -3em;
 }
 
 .textHidden {
@@ -151,14 +179,19 @@
     color: lightgray;
     font-size: 2.5em;
     margin-bottom: 0.1em;
-    margin-top: -0.8em;
+   /* margin-top: -0.8em;*/
+    margin-top: -1em;
     cursor: pointer;
+
+    right: -0.75em;
+    float: right;
 }
 .heart:hover {
     color: rgb(255, 192, 130);
     font-size: 2.5em;
     margin-bottom: 0.1em;
-    margin-top: -0.8em;
+   /* margin-top: -0.8em;*/
+    margin-top: -1em;
     cursor: pointer;
 }
 .heart:active,
@@ -170,6 +203,10 @@
     color: orangered;
     font-size: 2.5em;
     margin-bottom: 0.1em;
-    margin-top: -0.8em;
+/*    margin-top: -0.8em;*/
+    margin-top: -1em;
     cursor: pointer;
+
+    right: -0.75em;
+    float: right;
 }

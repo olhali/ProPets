@@ -29,13 +29,19 @@ class MiniCard extends React.Component {
         if (this.state.petInfo.imageUrls.length === 0) {
             imgLength = <div></div>
         } else if (this.state.petInfo.imageUrls.length === 1) {
-            imgLength = <div>
-                {this.state.petInfo.imageUrls.map (
-                    (img, index) =>
-                        (<div className={style.image}><img key={index} src={img} alt='PhotoPet' className={style.image}/></div>)
-                                )
-                }
-            </div>
+            imgLength = <Carousel indicators={false} interval={null} touch={true} nextIcon={<span className={`carousel-control-next-icon ${style.nextPrevIcons1}`}/>} prevIcon={<span className={`carousel-control-prev-icon ${style.nextPrevIcons1}`}/>}>
+                {this.state.petInfo.imageUrls.map ((img, index) =>
+                    <Carousel.Item key={index}>
+                        <div className={style.image}>
+                            <img
+                                className={style.image}
+                                src={img}
+                                alt="PhotoPet"
+                            />
+                        </div>
+                    </Carousel.Item>
+                )}
+            </Carousel>
         } else if (this.state.petInfo.imageUrls.length > 1) {
             imgLength = <Carousel indicators={true} interval={null} nextIcon={<span className={`carousel-control-next-icon ${style.nextPrevIcons}`}/>} prevIcon={<span className={`carousel-control-prev-icon ${style.nextPrevIcons}`}/>} touch={true}>
                 {this.state.petInfo.imageUrls.map ((img, index) =>
@@ -54,37 +60,42 @@ class MiniCard extends React.Component {
         return (
             <div className={`flex-container ${style.divPost}`}>
                 <div className='row'>
-                    <div className='col-4'>
+                    <div className='col-11 col-sm-10 col-md-4 offset-1 offset-sm-2 offset-md-0 pr-md-0'>
+                        {/*<div className='col-11 col-sm-10 col-md-9 col-xl-4 offset-1 offset-sm-2 offset-md-3 offset-xl-0 pr-md-0'>*/}
+                    {/*<div className='col-4'>*/}
                         {imgLength}
                     </div>
                     <div className='col-8'>
-                        <div className='col-9'>
+                        <div className='col-6 col-md-10 col-xl-9 offset-6 offset-md-0'>
+                            {/*<div className='col-9'>*/}
                         <p className={style.type}>{this.state.petInfo.type.toUpperCase()}</p>
                         </div>
                         <div className='row'>
-                            <div className='col-6'>
-                                <p><span className={style.textPost}>Breed:</span> {this.state.petInfo.breed}</p>
-                                <p><span className={style.textPost}>Color:</span> {this.state.petInfo.color}</p>
-                                <p><span className={style.textPost}>Sex:</span> {this.state.petInfo.sex}</p>
+                            <div className='col-6 col-md-4'>
+                                {/*<div className='col-6'>*/}
+                               {/* <div className='col-6 col-md-4 col-xl-4 offset-md-2 offset-xl-0'>*/}
+                                <p className='mrgAndBreak'><span className={style.textPost}>Breed:</span> {this.state.petInfo.breed}</p>
+                                <p className='mrgAndBreak'><span className={style.textPost}>Color:</span> {this.state.petInfo.color}</p>
+                                <p className='mrgAndBreak'><span className={style.textPost}>Sex:</span> {this.state.petInfo.sex}</p>
                              {/*   <p><span className={style.textPost}>Height/ cm:</span> {this.state.petInfo.height}</p>*/}
                             </div>
-                            <div className='col-6'>
-                                <p><span className={style.textPost}>Location:</span> {this.state.petInfo.location}</p>
-                                <p><span className={style.textPost}>Date:</span> {this.state.petInfo.date}</p>
-                                <p><span className={style.textPost}>Phone number:</span> <span className={style.number} onClick={this.toggleNumber}>{this.state.showNumber ? this.state.petInfo.phone : 'show number'}</span></p>
+                            <div className='col-6 col-md-4'>
+                                <p className='mrgAndWrap1'><span className={style.textPost}>Location:</span> {this.state.petInfo.location}</p>
+                                <p className='mrgLeftAndSpace'><span className={style.textPost}>Date:</span> {this.state.petInfo.date}</p>
+                                <p className='mrgLeftAndSpace'><span className={style.textPost}>Phone number:</span> <span className={style.number} onClick={this.toggleNumber}>{this.state.showNumber ? this.state.petInfo.phone : 'show number'}</span></p>
                              {/*   <p><span className={style.textPost}>Phone number:</span> <span className={style.number} onClick={this.toggleNumber}>{this.state.showNumber ? 'hide number' : 'show number'}</span> {this.state.showNumber && <p>{this.state.petInfo.phone}</p>}</p>*/}
                             </div>
                         </div>
                         <div className={style.emptyDiv}></div>
                         <div className='row'>
-                            <div className='col-6'>
-                                <p><span className={style.textPost}>Distinctive features:</span> {this.state.petInfo.distinction}</p>
+                            <div className='col-6 col-md-4'>
+                                <p className='mrgAndBreak'><span className={style.textPost}>Distinctive features:</span> {this.state.petInfo.distinction}</p>
                             </div>
-                            <div className='col-6'>
-                                <p><span className={style.textPost}>Description:</span> {this.state.petInfo.description}</p>
+                            <div className='col-6 col-md-4'>
+                                <p className='mrgAndWrap'><span className={style.textPost}>Description:</span> {this.state.petInfo.description}</p>
                             </div>
 
-                            <span className={`col-3 offset-9 ${style.spanAvatar}`}><img src='https://icons.veryicon.com/png/o/business/wms-purchase-sale-and-storage-background/customer-5.png' className={style.avatar} alt='Avatar'/>{this.state.petInfo.nameProfile}</span>
+                            <span className={`col-5 col-sm-4 col-md-3 offset-7 offset-sm-8 offset-md-9 ${style.spanAvatar}`}><img src='https://icons.veryicon.com/png/o/business/wms-purchase-sale-and-storage-background/customer-5.png' className={style.avatar} alt='Avatar'/>{this.state.petInfo.nameProfile}</span>
 
                         </div>
                     </div>
@@ -96,6 +107,12 @@ class MiniCard extends React.Component {
 export default MiniCard;
 
 
+
+/*  {this.state.petInfo.imageUrls.map (
+                    (img, index) =>
+                        (<div className={`row ${style.image2}`}><img key={index} src={img} alt='PhotoPet' className='col-md-8 col-xl-12 offset-md-0 offset-xl-0'/></div>)
+                )
+                }*/
 
 /*
  imageUrls: props.petInfo.imageUrls.length

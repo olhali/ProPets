@@ -71,31 +71,31 @@ const Navigation = (props) => {
     return (
    /*     <div id='navDivId' className='flex-container'>*/
             <div id='navDivId' className={`flex-container ${style.fixation}`}>
-            <div className={`row ${style.divHeight}`}><img className={`col-5 col-sm-7 col-md-9 col-xl-11 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
-            <div className={`col-6 col-sm-8 col-md-10 col-xl`}>
-                <Nav tabs vertical className={` ${style.mainPage}`}>
+            <div className={`row ${style.divHeight}`}><img className={`col-5 col-sm-6 col-md-6 col-lg-9 col-xl-11 p-0 p-sm-2 pt-xl-0 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
+            <div className={`col-6 col-sm-8 col-md-10 col-xl pl-0 pl-sm-3`}>
+                <Nav tabs vertical className={style.mainPage}>
                {/* <NavItem className={style.home}>*/}
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
                     {/*<NavLink href="#" active>*/}
                        {/* <NavLink exact activeClassName="active" tag={Link} to='/main_page/home' className="normal">*/}
-                    <NavLink tag={RRNavLink} to='/main_page/home' className={style.link}>
-                        <img className={style.homeImg} src={require(`../Images/Home-Free-PNG-Image.png`)} alt='Home'/>Home
+                    <NavLink tag={RRNavLink} to='/main_page/home' className={`pl-0 pl-sm-3 ${style.link}`}>
+                        <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/Home-Free-PNG-Image.png`)} alt='Home'/>Home
                     </NavLink>
                 </NavItem>
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink tag={RRNavLink} to='/main_page/lost' className={style.link}>
-                        <img className={style.homeImg} src={require(`../Images/pngwing.com.png`)} alt='Lost'/>Lost
+                    <NavLink tag={RRNavLink} to='/main_page/lost' className={`pl-2 pl-sm-3 ${style.link}`}>
+                        <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/pngwing.com.png`)} alt='Lost'/>Lost
                     </NavLink>
                 </NavItem>
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink tag={RRNavLink} to='/main_page/found' className={style.link}>
-                        <img className={style.homeImg} src={require(`../Images/pngwing.com (5).png`)} alt='Found'/>Found
+                    <NavLink tag={RRNavLink} to='/main_page/found' className={`pl-0 pl-sm-3 ${style.link}`}>
+                        <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/pngwing.com (5).png`)} alt='Found'/>Found
                     </NavLink>
                 </NavItem>
             {/*    <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
@@ -129,7 +129,7 @@ const Navigation = (props) => {
                     </Collapse>
                 </Navbar>*/}
 
-                <Button color='link' className={style.linkService}
+                <Button color='link' className={`pl-0 pl-sm-3 ${style.linkService}`}
                         onClick={(e) => {
                             e.preventDefault();
                             setCollapseOpen(!collapseOpen);
@@ -137,33 +137,33 @@ const Navigation = (props) => {
                         role="button"
                         id="collapse"
                 >
-                        <img className={style.serviceOptionsImg} src={require(`../Images/18.png`)} alt='Services'/><p className={style.serviceOptionsTxt}>Services</p>
+                        <img className={`mr-5 mr-sm-4 ${style.serviceOptionsImg}`} src={require(`../Images/18.png`)} alt='Services'/><p className={style.serviceOptionsTxt}>Services</p>
                 </Button>
                 <Collapse isOpen={collapseOpen}>
                     <Card>
                         <NavItem>
-                            <NavLink tag={RRNavLink} to='/main_page/services/hotels' className={style.serviceLink}>
-                                <img className={style.homeImg} src={require(`../Images/1161605.png`)} alt='Hotel'/>Hotels
+                            <NavLink tag={RRNavLink} to='/main_page/services/hotels' className={`pl-0 pl-sm-3 ${style.serviceLink}`}>
+                                <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/1161605.png`)} alt='Hotel'/>Hotels
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={RRNavLink} to='/main_page/services/walking' className={style.serviceLink}>
-                                <img className={style.homeImg} src={require(`../Images/walking.png`)} alt='Walking'/>Walking
+                            <NavLink tag={RRNavLink} to='/main_page/services/walking' className={`pl-0 pl-sm-3 ${style.serviceLink}`}>
+                                <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/walking.png`)} alt='Walking'/>Walking
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={RRNavLink} to='/main_page/services/fostering' className={style.serviceLink}>
-                                <img className={style.homeImg} src={require(`../Images/love.png`)} alt='Fostering'/>Fostering
+                            <NavLink tag={RRNavLink} to='/main_page/services/fostering' className={`pl-0 pl-sm-3 ${style.serviceLink}`}>
+                                <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/love.png`)} alt='Fostering'/>Fostering
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={RRNavLink} to='/main_page/services/vet_help' className={style.serviceLink}>
-                                <img className={style.homeImg} src={require(`../Images/PinClipart.com_clip-art-vet_1990539.png`)} alt='VetHelp'/>VetHelp
+                            <NavLink tag={RRNavLink} to='/main_page/services/vet_help' className={`pl-0 pl-sm-3 ${style.serviceLink}`}>
+                                <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/PinClipart.com_clip-art-vet_1990539.png`)} alt='VetHelp'/>VetHelp
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={RRNavLink} to='/main_page/services/care' className={style.serviceLink}>
-                                <img className={style.homeImg} src={require(`../Images/care.png`)} alt='Care'/>Care
+                            <NavLink tag={RRNavLink} to='/main_page/services/care' className={`pl-1 pl-sm-3 ${style.serviceLink}`}>
+                                <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/care.png`)} alt='Care'/>Care
                             </NavLink>
                         </NavItem>
                     </Card>
@@ -172,19 +172,19 @@ const Navigation = (props) => {
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink tag={RRNavLink} to='/main_page/favorites' className={style.link}>
-                        <img className={style.homeImg} src={require(`../Images/PinClipart.com_paw-print-heart-clipart_5562238.png`)} alt='Favorites'/>Favorites
+                    <NavLink tag={RRNavLink} to='/main_page/favorites' className={`pl-0 pl-sm-3 ${style.link}`}>
+                        <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/PinClipart.com_paw-print-heart-clipart_5562238.png`)} alt='Favorites'/>Favorites
                     </NavLink>
                 </NavItem>
                 <DropdownItem divider/>
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink className={style.link1}>{avatar}{username}</NavLink>
+                    <NavLink className={`pl-0 pl-sm-3 mr-5 mr-sm-0 ${style.link1}`}>{avatar}{username}</NavLink>
                    {/* <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{username}</NavLink>*/}
                 </NavItem>
                 <NavItem>
-                    <NavLink onClick={logout} className={style.cursor}><RiLogoutBoxLine className={style.outImg}/><span className={style.outTxt}>Logout</span></NavLink>
+                    <NavLink onClick={logout} className={`pl-0 pl-sm-3 ${style.cursor}`}><RiLogoutBoxLine className={`mr-5 mr-sm-4 ${style.outImg}`}/><span className={style.outTxt}>Logout</span></NavLink>
                 </NavItem>
                 <DropdownItem divider/>
             </Nav>

@@ -109,7 +109,8 @@ class MiniCardPost extends React.Component {
         return (
             <div className={`flex-container ${style.divPost}`}>
                 <div className='row'>
-                    <div className='col-4'>
+                    <div>
+                       {/* <div className='col-4'>*/}
                         <span className={`${style.spanAvatar1}`}><img src='https://icons.veryicon.com/png/o/business/wms-purchase-sale-and-storage-background/customer-5.png' className={style.avatar1} alt='Avatar'/>{this.state.postInfo.nameProfile}</span>
                         <p><span className={style.textPost1}>Date: </span> {new Date(this.state.postInfo.date).toLocaleDateString() +' '+  new Date(this.state.postInfo.date).toLocaleTimeString()}</p>
                     </div>
@@ -124,18 +125,24 @@ class MiniCardPost extends React.Component {
                     </p>
                 </div>
 
-                <div className='col-11'>
+                <div className='col-11 offset-1'>
+                    {/*<div className='col-11'>*/}
                     {imgLength}
                 </div>
 
                 {/*<div className='row' onClick={(event) => {this.handleClickLike(event)}} onChange={this.handleLike}>{colorLike}*/}
-                <div className='row' onClick={this.handleLike}>
+                {/*<div className='row' onClick={this.handleLike}>
                     {this.state.liked ? (
                         <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart1}`}/>
                     ) : (
                         <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart}`}/>
+                    )}*/}
+                <div onClick={this.handleLike}>
+                    {this.state.liked ? (
+                        <TiHeart className={`col-2 ${style.heart1}`}/>
+                    ) : (
+                        <TiHeart className={`col-2 ${style.heart}`}/>
                     )}
-
                 {/*  {this.state.liked ? (
                             <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart1}`} onClick={this.handleLike}/>
                     ) : (

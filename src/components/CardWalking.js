@@ -116,7 +116,7 @@ class CardWalking extends React.Component {
                             <br/>
 
                             <div>
-                                <label htmlFor='photo' className={style.label}>Photos:</label>
+                                <label htmlFor='photo' className={style.label1}>Photos:</label>
                                 <PhotoUpload addImageUrl={this.addImageUrl}/>
                             </div><br/>
                             </div>

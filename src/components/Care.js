@@ -99,7 +99,7 @@ class Care extends React.Component {
                     <div>
                         <div className={`flex-container ${style.divInfo}`}>
                             <div className='row'>
-                                <button className={`btn_animation col-3 col-sm-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
+                                <button className={`btn_animation col-3 offset-9 ${style.btnAdd1}`} onClick={this.addNew}><FaPlus/> Add new</button>
                                 <div className='col-9'>
                                     <p className={`${style.gradient_text1}`}><strong> With us, your pet will look its best, as we provide<br/> quality care from the best specialists!</strong></p>
                                 </div>
