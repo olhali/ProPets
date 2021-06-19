@@ -109,7 +109,7 @@ class CardVetHelp extends React.Component {
                 ) : (
                     <div>
                         <fieldset>
-                            <legend className={style.legendCard}><strong>Your new post! Simply text, add photos and publish!</strong></legend>
+                            <legend className={style.legendCardFix}><strong>Your new post! Simply text, add photos and publish!</strong></legend>
                             <div className={`flex-container ${style.divCard}`}>
                             <label htmlFor='textPost' className={style.label1}>Text: </label>
                             <textarea id='textPost' rows="1" maxlength="1500" name='textPost' title="Up to 1500 char" placeholder='Write something...' autoComplete='off' className={style.no_frame1} onChange={(event) => {this.handleText(event)}}/>

@@ -21,15 +21,10 @@ class Body extends React.Component {
         return (
             <Switch>
                 <Route path='/main_page/home' component={Home}/>
-               {/* <Route path='/main_page/lost' component={Lost}/>*/}
-               {/* <Route path={['/main_page/lost', '/main_page/lost/:id']} exact render={() => <Lost/>} />*/}
                <Route path="/main_page/lost/card/:petId" component={LostPetCardId}/>
-               {/* <Route path="/main_page/lost/card/:petId" exact render={(props) => (<LostPetCardId match={props.match}/>)}/>*/}
                <Route path='/main_page/lost' component={Lost}/>
-                <Route path='/main_page/found' component={Found}/>
                 <Route path="/main_page/found/card/:petId" component={FoundPetCardId}/>
-                {/*<Route path='/main_page/lost/card_lost' component={CardLost}/>
-                <Route path='/main_page/found/card_found' component={CardFound}/>*/}
+                <Route path='/main_page/found' component={Found}/>
                 <Route path='/main_page/services/hotels' component={Hotels}/>
                 <Route path='/main_page/services/walking' component={Walking}/>
                 <Route path='/main_page/services/fostering' component={Fostering}/>
@@ -43,3 +38,21 @@ class Body extends React.Component {
     }
 }
 export default Body;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <Route path='/main_page/lost' component={Lost}/>*/
+/* <Route path={['/main_page/lost', '/main_page/lost/:id']} exact render={() => <Lost/>} />*/
+/* <Route path="/main_page/lost/card/:petId" exact render={(props) => (<LostPetCardId match={props.match}/>)}/>*/
+/*<Route path='/main_page/lost/card_lost' component={CardLost}/>
+  <Route path='/main_page/found/card_found' component={CardFound}/>*/

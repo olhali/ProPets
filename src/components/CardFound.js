@@ -257,7 +257,7 @@ class CardFound extends React.Component {
                 ) : (
                     <div>
                         <fieldset>
-                            <legend className={style.legendCard}><strong>Found a pet? Fill in all the data and publish!</strong></legend>
+                            <legend className={style.legendCardFix}><strong>Found a pet? Fill in all the data and publish!</strong></legend>
                             <div className={`flex-container ${style.divCard1}`}>
                             <label htmlFor='pets' className={style.label1}><strong>F O U N D : </strong><span className={style.requiredFields}>*</span></label>
                             <input id='pets' type='text' maxlength="23" name='pets' list="petsList" title="Choose a pet that is found" placeholder='Choose a pet that is found' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleType(event)}}/>
