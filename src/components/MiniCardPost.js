@@ -129,6 +129,7 @@ class MiniCardPost extends React.Component {
                     {/*<div className='col-11'>*/}
                     {imgLength}
                 </div>
+                <br/>
 
                 {/*<div className='row' onClick={(event) => {this.handleClickLike(event)}} onChange={this.handleLike}>{colorLike}*/}
                 {/*<div className='row' onClick={this.handleLike}>
