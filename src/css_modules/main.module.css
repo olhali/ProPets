@@ -54,7 +54,7 @@ main button:active {
 }
 
 main button:focus {
-    outline: none;          /*убирает черную рамку вокруг кнопки*/
+    outline: none;
 }
 
 .span2 {

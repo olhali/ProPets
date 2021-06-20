@@ -82,7 +82,7 @@ class Fostering extends React.Component {
                 }})
             .then(data => this.setState({
                 favoritePosts: data,
-                insertLike: true                          //чтобы заново не прорисовывались лайки после постов в HOME, чтобы не блымкало
+                insertLike: true
             }))
 
             .catch(error => alert('Unable to display favorites. Try again!'));

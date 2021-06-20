@@ -83,7 +83,7 @@ class Home extends React.Component {
                 }})
             .then(data => this.setState({
                 favoritePosts: data,
-                insertLike: true                          //чтобы заново не прорисовывались лайки после постов в HOME, чтобы не блымкало
+                insertLike: true
             }))
 
             .catch(error => alert('Unable to display favorites. Try again!'));
@@ -117,24 +117,11 @@ class Home extends React.Component {
                                 </div>
                                 ) : (
                             <div className={style.divPadding}>
-                               {/* let postsHome = this.state.postsInfo.map(card => card.id);
-                                let favorit = this.favoritePosts.map(card => card.id);
-                                let isIdMatched = true;
-                                postsHome.forEach((value, i) =>
-                                {
-                                    if (value !== favorit[i]) {
-                                    isIdMatched = false;
-                                }
-                                });
-                                if (isIdMatched) console.log(true);
-                                else console.log(false);*/}
                                 {this.state.postsInfo.map ((cardPost) => {
                                     if (this.state.insertLike === false) {
                                         return ;
                                     }
-                                   /* let liked = favoritePosts.contains(cardPost.id);*/
-                                    /*<MiniCardPost like={this.addLike} key={cardPost.id} postsInfo={cardPost}/>*/
-                                    /*  <MiniCardPost like={this.state.likes} likeColor={this.state.likeColor} changeColor={this.changeColorLike} addLike={this.addLike} key={cardPost.id} postsInfo={cardPost}/>*/
+
                                         let liked = this.state.favoritePosts.some((favPost) => {
                                          return favPost.post.id === cardPost.id
                                     });
@@ -159,91 +146,3 @@ class Home extends React.Component {
     }
 }
 export default Home;
-
-
-
-/*liked: false*/
-
-/*likes: sessionStorage.getItem('likes') | 0,
-likeColor: sessionStorage.getItem('likeColor')*/
-/*  likeColor: sessionStorage.getItem('likeColor') | 'lightgray'*/
-/*  like: 0,
-  color: 'lightgray'*/
-/*this.changeColorLike = this.changeColorLike.bind(this);*/
-
-
-/*handleClickLike = e => {
-       this.setState({
-           liked: !this.state.liked
-       })
-   };*/
-
-/*addLike = () => {
-    this.setState(({ likes }) => ({
-            likes: likes + 1
-        }), () => sessionStorage.setItem('likes', this.state.likes))
-};
-
-changeColorLike = () => {
-    this.setState(({ likeColor }) => ({
-        likeColor: "orangered"
-    }), () => sessionStorage.setItem('likeColor', this.state.likeColor));
-};*/
-
-/* addLike = (event) => {
-     this.setState({
-         like: this.state.like + 1,
-         color: "orangered"
-     })
- };*/
-
-/*handleLike = (event) => {
-    let favoritePost = {};
-    favoritePost.post = this.state.postsInfo;
-    let token = localStorage.getItem('accessToken');
-    fetch(`${urlGetFavorites}`, {
-        method: 'GET',
-        headers: {
-            'Content-type': 'application/json',
-            'Authorization': token
-        },
-        body: JSON.stringify(favoritePost)
-    })
-        .then(response => {
-            if (response.ok) {
-                return response.text();
-            } else {
-            /!*    window.location.replace('/');*!/
-                throw new Error ();
-            }})
-        .then(favoritePost => {setUsername(data); return data})
-        .then(data => localStorage.setItem('userName', data))
-
-     .catch(error => alert('Error. Unable to like. Try again!'));
-};*/
-
-
-/*let likes = sessionStorage.getItem('likes');
-       let favoritePost = {};
-       favoritePost.post = this.state.postsInfo;
-       fetch(`${urlGetFavorites}`, {
-           method: 'GET',
-           headers: {
-               'Content-type': 'application/json',
-               'Authorization': likes
-           },
-           body: JSON.stringify(favoritePost)
-       })
-           .then(response => {
-               if (response.ok) {
-                   return response.json();
-               } else {
-                   throw new Error ();
-               }})
-           .then(data => {this.setState({
-               postsInfo: favoritePost
-           })});
-           sessionStorage.setItem('likes', favoritePost.post.id);
-           /!*.then(data => sessionStorage.setItem('likes', favoritePost.id))*!/
-
-           .catch(error => alert('Error. Unable to like. Try again!'));*/

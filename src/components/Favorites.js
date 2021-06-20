@@ -1,10 +1,8 @@
 import React from "react";
 import style from "../css_modules/header.module.css";
-import {FAVORITES, HOME, urlGetFavorites, urlGetPosts} from "../utils/Constants";
+import {urlGetFavorites} from "../utils/Constants";
 import ScrollToTop from "./ScrollToTop";
-import CardHome from "./CardHome";
 import MiniCardPost from "./MiniCardPost";
-import {FaPlus} from "react-icons/all";
 import {BeatLoader} from "react-spinners";
 
 class Favorites extends React.Component {
@@ -31,15 +29,12 @@ class Favorites extends React.Component {
 
     componentWillMount () {
          let token = localStorage.getItem('accessToken');
-         /*let favoritePost = {};
-         favoritePost.post = this.state.postsInfo;*/
          fetch(`${urlGetFavorites}`, {
              method: 'GET',
              headers: {
                  'Content-type': 'application/json',
                  'Authorization': token
              }
-            /* body: JSON.stringify(favoritePost)*/
          })
              .then(response => {
                  if (response.ok) {
@@ -51,7 +46,6 @@ class Favorites extends React.Component {
                  loading: false,
                  favoritePosts: data
              }))
-            /* .then(favoritePost => sessionStorage.setItem('likess', favoritePost.id))*/
 
              .catch(error => alert('Unable to display favorites. Try again!'));
     }

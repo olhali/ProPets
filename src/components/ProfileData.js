@@ -1,6 +1,5 @@
 import React from "react";
 import style from '../css_modules/login.module.css'
-import {Button} from "reactstrap";
 
 class ProfileData extends React.Component {
 
@@ -19,10 +18,6 @@ class ProfileData extends React.Component {
 
                     <button color="secondary" onClick=''>Cancel</button>
                     <button color='success' className='submit' onClick=''>Save changes</button>
-                   {/* <button color='success' className='submit' onClick={handleSave}>Save changes</button>*/}
-
-                    {/*<input type="submit"/>*/}
-
                 </form>
             </div>
         );

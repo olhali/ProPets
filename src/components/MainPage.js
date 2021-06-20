@@ -15,8 +15,6 @@ class MainPage extends React.Component {
 
     checkValidToken = () => {
         try {
-       // alert('checkValidation');
-            /*let token = localStorage.getItem('accessToken');*/
            fetch(`${authenticate}`, {
                 method: 'GET',
                 headers: {
@@ -24,7 +22,6 @@ class MainPage extends React.Component {
                     'Authorization': this.state.token
                 }})
              .then(response => {
-         //   alert('before1');
             if(!response.ok){
                 window.location.replace('/');
             } else {
@@ -34,20 +31,13 @@ class MainPage extends React.Component {
             }
         })
     } catch (e) {
-          //  alert('catch1');
         this.setState({
-            //error: alert("Invalid token")
             showAuthorization: true
         })
     }
-   // alert('after1');
-
-
-
     };
 
     componentWillMount() {
-     //   alert('WillMount');
         this.checkValidToken();
     }
 
@@ -68,8 +58,6 @@ class MainPage extends React.Component {
                 </div>
             )
         }
-
-        //alert('render');
 
         }
     }

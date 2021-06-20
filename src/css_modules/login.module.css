@@ -1,16 +1,10 @@
-/*.formOfModal {
-    position: center;
-}*/
-
 .no_frame {
     border-top: none;
     border-left: none;
     border-right: none;
     border-color: rgb(67, 170, 124);
-    /*text-decoration: underline rgb(255, 203, 157);*/
     outline: none;
     width: 70%;
-    /*margin-right: -4.5em;*/
     background-color: lightyellow;
 }
 
@@ -19,23 +13,17 @@
     border-left: none;
     border-right: none;
     border-color: rgb(67, 170, 124);
-    /*text-decoration: underline rgb(255, 203, 157);*/
     outline: none;
     width: 90%;
     margin-left: 6em;
-    /*margin-right: -4.5em;*/
     background-color: lightyellow;
 }
 
 .label {
      padding-right: 0.5em;
      margin-top: 1em;
-     /*margin-left: -3.5em;
-     margin-right: 0.7em;*/
      width: 30%;
-     /*clear: left;*/
      text-align: left;
-     /*   padding-right: 10px;*/
      font-weight: bold;
      color: rgb(250, 132, 53);
      text-shadow: 0.2em 0.1em 0.3em rgb(255, 192, 130);
@@ -45,12 +33,8 @@
     padding-right: 0.5em;
     padding-left: 0.45em;
     margin-top: 1.5em;
-    /*margin-left: -3.5em;
-    margin-right: 0.7em;*/
     width: 30%;
-    /*clear: left;*/
     text-align: left;
-    /*   padding-right: 10px;*/
     font-weight: bold;
     color: rgb(250, 132, 53);
     text-shadow: 0.2em 0.1em 0.3em rgb(255, 192, 130);
@@ -113,26 +97,14 @@ input[placeholder] {
     font-size: 2em;
 }
 
-/*.legendLost, .legendFound {
-    color: rgb(67, 170, 124);
-    font-size: 2em;
-    text-shadow: 0.1em 0.1em 0.2em rgb(67, 170, 124);
-    text-align: center;
-}*/
-
 .legendCard {
     color: rgb(67, 170, 124);
-   /* font-size: 2em;*/
     font-size: 2.35em;
     text-shadow: 0.1em 0.1em 0.2em lightyellow;
     text-align: center;
     height: 2.1em;
-   /* width: 65.85em;*/
     background: rgb(255, 203, 157);
     box-shadow: 0 3px 6px #00000029;
-   /* opacity: 1;*/
-    /*position: fixed;*/
-    /*z-index: 16;*/
     margin-bottom: -0.1em;
     margin-left: 0;
     padding-top: 0.4em;
@@ -156,33 +128,15 @@ input[placeholder] {
     z-index: 16;
     top: 0;
 }
-/*.legendCard1 {
-    color: rgb(67, 170, 124);
-    font-size: 1.5em;
-    text-shadow: 0.1em 0.1em 0.2em lightyellow;
-    text-align: center;
-    height: 3.3em;
-    background: rgb(255, 203, 157);
-    box-shadow: 0 3px 6px #00000029;
-    margin-bottom: -0.1em;
-    margin-left: 0;
-    padding-top: 0.4em;
-    line-height: 1.5em;overflow: hidden;
-}*/
 
 .divCard {
     overflow: hidden;
     border: 3px outset rgb(255, 192, 130);
-    /*box-shadow: 0.2em 0.2em 0.4em rgb(255, 192, 130);
-    background-color: rgb(255, 250, 200);*/
     background-color: lightyellow;
     box-shadow: 0 3px 6px rgb(255, 203, 157);
     opacity: 1;
     margin-top: 4px;
-  /*  margin-left: 0.1em;*/
-    /*padding-left: 1em;*/
     padding-right: 1em;
-    /*word-wrap:break-word;*/
     word-break:break-all;
 }
 .divCard1 {
@@ -231,7 +185,6 @@ input[placeholder] {
     font-weight: bold;
     color: red;
     font-size: 1.5em;
- /*   margin: auto;*/
     margin-bottom: 0.8em;
     margin-left: 5em;
     display: table;
@@ -253,61 +206,3 @@ input[placeholder] {
     margin: 0 auto;
     text-shadow: 0.1em 0.1em 0.2em rgb(255, 192, 130);
 }
-
-/*
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    !* display: none; <- Crashes Chrome on hover *!
-    -webkit-appearance: none;
-    margin: 0; !* <-- Apparently some margin are still there even though it's hidden *!
-}
-
-input[type=number] {
-    -moz-appearance:textfield; !* Firefox *!
-}
-*/
-
-/*
-.modal1 {
-    background-color: rgb(255, 203, 157);
-   !* box-shadow: 0 3px 6px #00000029;*!
-    border: 1px solid rgb(250, 132, 53);
-    animation: enlarge-box 0.9s forwards;
-    width: 1000px;
-   !* transform: translateX(-50%) translateY(-50%);
-    *!
-}
-*/
-
-
-
-/*@keyframes enlarge-box {
-    0% {
-        width: 1px;
-        max-height: 1px;
-    }
-    100% {
-        width: 600px;
-        max-height: calc(100% - 30px);
-    }
-}*/
-
-
-
-
-/*input {
-   width: 1000px;
-}*/
-
-/*.modal {
-    width: 1000px;
-}*/
-
-/*.modalSize {
-    max-width: 600px;
-}*/
-
-/*
-.no_frame, .label {
-    float: left;
-}*/

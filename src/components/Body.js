@@ -9,8 +9,6 @@ import Hotels from "./Hotels";
 import Walking from "./Walking";
 import Fostering from "./Fostering";
 import VetHelp from "./VetHelp";
-import CardLost from "./CardLost";
-import CardFound from "./CardFound";
 import LostPetCardId from "./LostPetCardId";
 import FoundPetCardId from "./FoundPetCardId";
 import Care from "./Care";
@@ -38,21 +36,3 @@ class Body extends React.Component {
     }
 }
 export default Body;
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* <Route path='/main_page/lost' component={Lost}/>*/
-/* <Route path={['/main_page/lost', '/main_page/lost/:id']} exact render={() => <Lost/>} />*/
-/* <Route path="/main_page/lost/card/:petId" exact render={(props) => (<LostPetCardId match={props.match}/>)}/>*/
-/*<Route path='/main_page/lost/card_lost' component={CardLost}/>
-  <Route path='/main_page/found/card_found' component={CardFound}/>*/

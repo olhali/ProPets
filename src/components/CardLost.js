@@ -5,7 +5,7 @@ import {
     MdClose,
     VscDebugBreakpointUnsupported
 } from "react-icons/all";
-import {profileName, urlSaveLostPet} from "../utils/Constants";
+import {urlSaveLostPet} from "../utils/Constants";
 import PhotoUpload from "./PhotoUpload";
 import {Link} from "react-router-dom";
 import {Button} from "reactstrap";
@@ -18,7 +18,6 @@ class CardLost extends React.Component {
             breed: '',
             color: '',
             sex: '',
-            /*height: '',*/
             distinction: '',
             description: '',
             location: '',
@@ -46,9 +45,6 @@ class CardLost extends React.Component {
          if (this.state.sex !== prevState.sex) {
              this.validation();
          }
-        /* if (this.state.height !== prevState.height) {
-             this.validation();
-         }*/
          if (this.state.distinction !== prevState.distinction) {
              this.validation();
          }
@@ -58,9 +54,6 @@ class CardLost extends React.Component {
          if (this.state.location !== prevState.location) {
              this.validation();
          }
-       /*  if (this.state.nameProfile !== prevState.nameProfile) {
-             this.validation();
-         }*/
          if (this.state.date !== prevState.date) {
              this.validation();
          }
@@ -89,11 +82,6 @@ class CardLost extends React.Component {
                 sex: e.target.value
         })
     };
-    /*handleHeight = (e) => {
-        this.setState({
-                height: e.target.value
-        })
-    };*/
     handleDistinction = (e) => {
         this.setState({
                 distinction: e.target.value
@@ -226,7 +214,6 @@ class CardLost extends React.Component {
         petInfo.breed = this.state.breed;
         petInfo.color = this.state.color;
         petInfo.sex = this.state.sex;
-        /*petInfo.height = this.state.height;*/
         petInfo.distinction = this.state.distinction;
         petInfo.description = this.state.description;
         petInfo.location = this.state.location;
@@ -236,7 +223,6 @@ class CardLost extends React.Component {
         petInfo.phone = this.state.phone;
         console.log(petInfo);
         let token = localStorage.getItem('accessToken');
-        //alert(token);
         fetch(`${urlSaveLostPet}`, {
             method: 'POST',
             headers: {
@@ -249,16 +235,12 @@ class CardLost extends React.Component {
                 this.setState({
                     responseAfterCard: true
                 });
-                // console.log(response);
                 if (response.ok) {
-                   // alert('1');
                     return response.text()
                 } else {
-                  //  alert('2');
                     throw new Error(response.statusText);
                 }
             })
-            /*.then(data => this.props.history.push('/main_page/lost'))*/
 
             .catch(error => alert('Please, fill in required fields!'));
     };
@@ -355,9 +337,6 @@ class CardLost extends React.Component {
                                 <input type="radio" id="unknown" name="sex" value="unknown" className={style.sex} onChange={(event) => {this.handleSex(event)}}/>
                                 <label htmlFor="unknown">Unknown</label><br/><br/>
 
-                   {/* <label htmlFor='height' className={style.label}>Height/ cm:</label>
-                    <input id='height' type='number' onInput={(e) => e.target.value = e.target.value.slice(0, 3)} name='height' min="1" title="Enter the approximate height/size of the pet" placeholder='Enter the approximate height/size of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleHeight(event)}}/><br/><br/>
-*/}
                     <label htmlFor='distinction' className={style.label1}>Distinctive features:</label>
                     <textarea id='distinction' rows="1" maxlength="400" name='distinction' title='Enter the distinctive features of the pet' placeholder='Enter the distinctive features of the pet' autoComplete='off' className={style.no_frame} onChange={(event) => {this.handleDistinction(event)}}/><br/><br/>
 
@@ -386,8 +365,6 @@ class CardLost extends React.Component {
 
                         <button className={style.publish} onClick={this.handlePublish}><FaPaw/> Publish</button>
 
-                        {/*<button color="secondary" className={style.cancel} onClick={event => window.location.href='/main_page/lost'}><MdClose/>Cancel</button>*/}
-
                         <Link to='/main_page/lost'>
                             <button color="secondary" className={style.cancel} onClick={event => window.location.href='/main_page/lost'}><MdClose/>Cancel</button>
                         </Link>
@@ -399,75 +376,3 @@ class CardLost extends React.Component {
     }
 }
 export default CardLost;
-
-
-
-
-
-
-/* getlostAnimals(){
-         return [{color: 'red', sex: 'male', height: '45cm',description : 'sadsada'},
-             {color: 'blue', sex: 'male', height: '45cm',description : 'sadsada'},
-             {color: 'gray', sex: 'male', height: '45cm',description : 'sadsada'}]
-     }*/
-
-/* const handleSend = () => {
-     fetch(`${urlUploadingPhoto}`, {
-         method: 'POST',
-         headers: {
-             'Content-type': 'application/json',
-         },
-         body: email
-     })
-         .then(response =>  {setResponseAfterEmail (true); return response.text()})
-         /!* .then(response => cancel())*!/
-
-         .catch(error => alert("You entered incorrect data. Try again"));
-     /!* .catch(error => console.log(error));*!/
-
-
- };*/
-
-/*    let data = {userEmail: email, password: password};
-    //console.log(JSON.stringify(data));                                          //{"username":"linetskI","password":"222222"}
-    fetch(`${urlLogin}`, {
-method: 'POST',
-headers: {
-'Content-type': 'application/json',
-},
-body: JSON.stringify(data)
-})
-.then((response) => {
-    // console.log(response);
-if (response.ok) {
-return response.json()
-} else {
-throw new Error(response.statusText);
-}})
-    /!*.then(data => {console.log(data); return data})*!/
-.then(data =>  {console.log(data.accessToken); return data})
-.then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
-.then(data => history.push('/main_page'))
-
-.catch(error => alert("You entered incorrect data. Try again"));*/
-
-/*handleGetPet = (e) => {
-    e.preventDefault();
-    let pet = e.currentTarget.petInfo.value;
-    this.getPetInfo(this.state.petInfo);
-};*/
-
-
-/*
-<label htmlFor='photo' className={style.label}>Pet photo:</label>
-                        <Link to='/main_page/lost/card_lost/photoUpload'>
-
-                            <button><FaPlus/> Add new</button>
-                        </Link>
-
-<input id='photo' type='file' multiple onClick={PhotoUpload}/><br/>*!/}
-<input id='photo' type='file' multiple title='Attach a photo of the pet' placeholder='Please, attach a photo of the pet' className={style.no_frame}/><br/>
-
-<label htmlFor='photo' className={style.label}>Pet photo:</label>
-                    <input id='photo' type='file' name='photo' title='Attach a photo of the pet' placeholder='Please, attach a photo of the pet' autoComplete='off' className={style.no_frame}/><br/>
-                    <input id='photo' type='file' name='files[]' multiple title='Attach a photo of the pet' placeholder='Please, attach a photo of the pet' className={style.no_frame}/><br/>*/

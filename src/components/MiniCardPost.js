@@ -11,11 +11,6 @@ class MiniCardPost extends React.Component {
         this.state = {
             postInfo: props.postsInfo,
             liked: this.props.like
-
-          /*  favorites: []*/
-            /*like: ''*/
-          /*  likes: sessionStorage.getItem('likes') | false,
-            likeColor: 'lightgray'*/
         };
     }
 
@@ -50,9 +45,6 @@ class MiniCardPost extends React.Component {
                         throw new Error ();
                     }})
                 .then(data => this.props.add(data))
-                /*  .then(data => {console.log(data); return data})*/
-                /*    .then(data => this.setState({favoritePosts: data}))*/
-                /*.then(data => sessionStorage.setItem('likes', favoritePost.post))*/
 
                 .catch(error => alert('Error. Unable to like. Try again!'));
         } else {
@@ -76,8 +68,7 @@ class MiniCardPost extends React.Component {
     };
 
     render() {
-        /*const colorLike = this.state.liked ? <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart1}`}/> : <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart}`}/>;*/
-        if (this.state.postInfo === null) {          //для проверки на пустую карточку, нужно для отрисовки отдел.карточки по url
+        if (this.state.postInfo === null) {
             return <div></div>
         }
         let imgLength;
@@ -110,13 +101,11 @@ class MiniCardPost extends React.Component {
             <div className={`flex-container ${style.divPost}`}>
                 <div className='row'>
                     <div>
-                       {/* <div className='col-4'>*/}
                         <span className={`${style.spanAvatar1}`}><img src='https://icons.veryicon.com/png/o/business/wms-purchase-sale-and-storage-background/customer-5.png' className={style.avatar1} alt='Avatar'/>{this.state.postInfo.nameProfile}</span>
                         <p><span className={style.textPost1}>Date: </span> {new Date(this.state.postInfo.date).toLocaleDateString() +' '+  new Date(this.state.postInfo.date).toLocaleTimeString()}</p>
                     </div>
                 </div>
 
-                {/*<div className={style.emptyDiv}></div>*/}
                 <div className='col-11'>
                     <p className={style.textCard}>
                         <ReadMore>
@@ -126,112 +115,19 @@ class MiniCardPost extends React.Component {
                 </div>
 
                 <div className='col-11 offset-1'>
-                    {/*<div className='col-11'>*/}
                     {imgLength}
                 </div>
                 <br/>
 
-                {/*<div className='row' onClick={(event) => {this.handleClickLike(event)}} onChange={this.handleLike}>{colorLike}*/}
-                {/*<div className='row' onClick={this.handleLike}>
-                    {this.state.liked ? (
-                        <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart1}`}/>
-                    ) : (
-                        <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart}`}/>
-                    )}*/}
                 <div onClick={this.handleLike}>
                     {this.state.liked ? (
                         <TiHeart className={`col-2 ${style.heart1}`}/>
                     ) : (
                         <TiHeart className={`col-2 ${style.heart}`}/>
                     )}
-                {/*  {this.state.liked ? (
-                            <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart1}`} onClick={this.handleLike}/>
-                    ) : (
-                            <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart}`} onClick={this.handleLike}/>
-                    )}*/}
                 </div>
             </div>
         );
     }
 }
 export default MiniCardPost;
-
-
-/*<div className='col-1 col-sm-1 offset-11'>likes: </div>*!/}
-
-   <div className='row' onClick={(event) => {this.props.changeColor(event)}}>
-                         <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart}`} style={{color: this.state.like}} onClick={this.addLike}/>
-                    <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart}`} style={{color: this.props.likeColor}} onClick={(event) => {this.props.addLike(event)}}/>
-                </div>
-                <div className='col-1 col-sm-1 offset-11'>likes: {this.props.like}</div>
-
-   <TiHeart className={`col-1 col-sm-1 offset-11 ${style.heart}`} style={{color: this.state.likeColor}} onClick={this.addLike}/>
-            </div>
-            <div className='col-1 col-sm-1 offset-11'>{this.state.likes}</div>
-  <div className={style.emptyDiv}></div>*/
-
-
-/*  addLike = (event) => {
-        this.setState({
-            like: this.state.like + 1,
-            likeColor: "orangered"
-        })
-    };*/
-/*addLike = () => {
-    this.setState(({ likes }) => ({
-        likes: likes + 1,
-            likeColor: "orangered"
-    }),
-        () => sessionStorage.setItem('likes', this.state.likes));
-};*/
-
-/*  handleLike = (event) => {
-  let favoritePost = {};
-  favoritePost.post = this.state.postInfo;
-  /!*let postInfo = {};
-  postInfo.type = HOME;
-  postInfo.text = this.state.text;
-  postInfo.nameProfile = localStorage.getItem('userName');
-  postInfo.imageUrls = this.state.imageUrls;*!/
-  let token = localStorage.getItem('accessToken');
-  fetch(`${urlSaveFavorite}`, {
-      method: 'POST',
-      headers: {
-          'Content-type': 'application/json',
-          'Authorization': token
-      },
-      body: JSON.stringify(favoritePost)
-  })
-      .then((response) => {
-          if (response.ok) {
-              return response.json()
-          } else {
-              throw new Error(response.statusText);
-          }})
-      .then(data =>  {console.log(data.accessToken); return data})
-      .then(data => localStorage.setItem('accessToken', data.tokenType+' '+data.accessToken))
-
-      .catch(error => alert('Error. Unable to like. Try again!'));
-};*/
-
-/*handleLike = (event) => {
-let token = localStorage.getItem('accessToken');
-fetch(`${urlGetFavorites}`, {
-    method: 'GET',
-    headers: {
-        'Content-type': 'application/json',
-        'Authorization': token
-    }})
-    .then(response => {
-        if (response.ok) {
-            return response.text();
-        } else {
-            //alert('To perform this action - you must login again');
-            window.location.replace('/');
-            throw new Error ();
-        }})
-    .then(data => {setUsername(data); return data})
-    .then(data => localStorage.setItem('userName', data))
-
-// .catch(error => alert('To perform this action - you must login again'));
-};*/

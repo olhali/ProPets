@@ -1,16 +1,10 @@
 .divPost {
     border: 3px outset rgb(255, 192, 130);
-    /*box-shadow: 0.2em 0.2em 0.4em rgb(255, 192, 130);
-    background-color: rgb(255, 250, 200);*/
     background-color: rgb(255, 243, 200);
     box-shadow: 0 3px 6px rgb(255, 203, 157);
     opacity: 1;
-    /*margin-top: 8px;*/
     margin-top: 5.5px;
-    /*padding-left: 1em;*/
     padding-right: 1.5em;
-    /*word-wrap:break-word;*/
-    /*word-break:break-all;*/
     white-space: pre-wrap;
     word-break: normal;
 }
@@ -18,7 +12,6 @@
 .textPost {
     color: rgb(67, 170, 124);
     font-weight: bold;
-   /* margin-left: 1em;*/
 }
 .textPost1 {
     color: rgb(67, 170, 124);
@@ -28,8 +21,6 @@
 
 .number {
     cursor: pointer;
-    /*word-wrap:break-word;*/
-    /*word-break:break-all;*/
       white-space: pre-wrap;
       word-break: normal;
 }
@@ -53,7 +44,6 @@
 .image {
     height: 20em;
     width: 18em;
-  /*  margin-left: 2.35em;*/
     margin-left: 0.7em;
     margin-top: 0.5em;
     margin-bottom: 0.25em;
@@ -73,31 +63,12 @@
 
 .image1 {
     height: 20em;
-    /*width: 18em;*/
-    /*  margin-left: 2.35em;*/
-   /* margin-left: 8em;*/
-   /* margin-top: 0.5em;*/
-   /* margin-bottom: 0.25em;*/
     margin-bottom: 1em;
-   /* box-shadow: 0.4em 0.1em 0.5em rgb(255, 192, 130);*/
-    /*display: inline-block;*/
     margin-left: auto;
     margin-right: auto;
     display: block;
     overflow: hidden;
 }
-
-/*.image2 {
-    height: 20em;
-    width: 19em;
-    !*  margin-left: 2.35em;*!
-    margin-left: 0.5em;
-    margin-top: 1em;
-    margin-bottom: 0.25em;
-    !* box-shadow: 0.4em 0.1em 0.5em rgb(255, 192, 130);*!
-   !* display: inline-block;
-    overflow: hidden;*!
-}*/
 
 .nextPrevIcons {
     background-color: rgb(255, 192, 145);
@@ -165,24 +136,17 @@
 .textHidden {
     font-weight: bold;
     letter-spacing: 3px;
-  /*  background-color: lightgray;*/
     color: darkorange;
     cursor: pointer;
     margin-left: 0.5em;
-   /* padding-right: 0.2em;
-    padding-left: 0.3em;
-    padding-bottom: 0.1em;*/
-    /*border-radius: 55%;*/
 }
 
 .heart {
     color: lightgray;
     font-size: 2.5em;
     margin-bottom: 0.1em;
-   /* margin-top: -0.8em;*/
     margin-top: -1em;
     cursor: pointer;
-
     right: -0.75em;
     float: right;
 }
@@ -190,7 +154,6 @@
     color: rgb(255, 192, 130);
     font-size: 2.5em;
     margin-bottom: 0.1em;
-   /* margin-top: -0.8em;*/
     margin-top: -1em;
     cursor: pointer;
 }
@@ -203,10 +166,8 @@
     color: orangered;
     font-size: 2.5em;
     margin-bottom: 0.1em;
-/*    margin-top: -0.8em;*/
     margin-top: -1em;
     cursor: pointer;
-
     right: -0.75em;
     float: right;
 }

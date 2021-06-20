@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Button, Col, Container, Modal, ModalBody, ModalFooter, ModalHeader, Row} from "reactstrap";
 import style from "../css_modules/login.module.css";
-import validator from "validator";
-import {localChangePassword, urlChangePassword, urlResetPassword} from "../utils/Constants";
+import {urlChangePassword} from "../utils/Constants";
 import {useHistory} from "react-router-dom";
 
 const ResetPassword = (props) => {
@@ -58,23 +57,9 @@ const ResetPassword = (props) => {
             body: JSON.stringify(data)
         })
             .then(response =>  {setResponseAfterPassword (true); return response.text()})
-            /* .then(response => cancel())*/
 
             .catch(error => alert("You entered incorrect data. Try again"));
-        /* .catch(error => console.log(error));*/
     };
-
- /*   const checkPassword = () => {
-        if (document.getElementById('user_password').value === document.getElementById('repeat_password').value) {
-            document.getElementById('message').style.color = 'green';
-            document.getElementById('message').innerHTML = '* Passwords match *';
-            document.getElementById('submit').disabled = false;
-        } else {
-            document.getElementById('message').style.color = 'red';
-            document.getElementById('message').innerHTML = '* Passwords do not match *';
-            document.getElementById('submit').disabled = true;
-        }
-    };*/
 
     return (
         <div>
@@ -115,7 +100,6 @@ const ResetPassword = (props) => {
                     ) : (
                         <div>
                             <p className={style.p_modal}>By clicking “Send”, you agree to us processing your information.</p>
-                            {/*<Button color="secondary" onClick={cancel}>Cancel</Button>*/}
                             <Button color='success' id='send' onClick={handleSend} disabled={!validPassword}>Send</Button>
                         </div>
                     )}

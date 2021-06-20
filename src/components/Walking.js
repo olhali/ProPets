@@ -82,7 +82,7 @@ class Walking extends React.Component {
                 }})
             .then(data => this.setState({
                 favoritePosts: data,
-                insertLike: true                          //чтобы заново не прорисовывались лайки после постов в HOME, чтобы не блымкало
+                insertLike: true
             }))
 
             .catch(error => alert('Unable to display favorites. Try again!'));
@@ -134,16 +134,6 @@ class Walking extends React.Component {
                                     }
                                 )
                                 }
-                                {/*{this.state.postsInfo.filter((cardPost) => {
-                                    if (cardPost.type.toLowerCase().includes(this.state.type.toLowerCase()) && cardPost.location.toLowerCase().includes(this.state.location.toLowerCase()) && cardPet.breed.toLowerCase().includes(this.state.breed.toLowerCase()) && cardPet.distinction.toLowerCase().includes(this.state.distinctive.toLowerCase())) {
-                                        return true
-                                    } else {
-                                        return false
-                                    }
-                                }).map ((cardPost) => (
-                                    <MiniCard key={cardPost.id} petInfo={cardPost}/>
-                                ))
-                                }*/}
                             </div>
                                 )}
                         </div>

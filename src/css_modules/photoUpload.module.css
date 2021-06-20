@@ -1,6 +1,5 @@
 .dropzone {
     height: 7rem;
-   /* width: 20rem;*/
     margin-left: 6rem;
     margin-top: 0.5rem;
     padding: 1rem;
@@ -30,11 +29,3 @@
     display: inline;
     margin-right: 5px;
 }
-
-/*
-
-.color {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-}*/

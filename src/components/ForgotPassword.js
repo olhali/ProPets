@@ -41,10 +41,8 @@ const ForgotPassword = (props) => {
                 body: email
             })
                 .then(response =>  {setResponseAfterEmail (true); return response.text()})
-                /* .then(response => cancel())*/
 
                 .catch(error => alert("You entered incorrect data. Try again"));
-            /* .catch(error => console.log(error));*/
     };
 
 

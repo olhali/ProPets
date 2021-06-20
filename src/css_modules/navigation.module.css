@@ -6,33 +6,20 @@
     color: rgb(67, 170, 124);
 }
 
-/*.home{
-    background-color: lightseagreen;
-    height: 4.5em;
-}*/
-
 .homeImg {
-   /* margin-right: 1.5em;*/
-   /* margin-right: 1.6em;*/
     width: 4em;
 }
 
 .divHeight {
-   /* height: 4em;*/
     height: 5em;
     padding-top: 0.2em;
     background-color: rgb(255, 203, 157);
-  /*  width: 22em;*/
     width: 21.5em;
-   /* margin-left: 0.85em;*/
-   /* width: 20.6em;*/
 }
 
 .topImg {
     background: rgb(255, 203, 157);
-   /* box-shadow: 0 3px 6px #00000029;*/
     opacity: 1;
-   /* height: 2em;*/
 }
 
 .link, .linkService {
@@ -60,14 +47,14 @@
     font-family: 'Krona One', sans-serif;
 }
 .link:focus {
-    outline: none;                                         /*убирает черную рамку вокруг кнопки*/
-    background-color: rgb(67, 185, 124);        /*цвет кнопки после нажатия не изменяется*/
+    outline: none;
+    background-color: rgb(67, 185, 124);
     border: 2px solid rgb(67, 150, 124);
     color: rgb(255, 203, 157);
     font-family: 'Krona One', sans-serif;
 }
 .linkService:focus {
-    outline: none;                                         /*убирает черную рамку вокруг кнопки*/
+    outline: none;
     border: 2px solid rgb(67, 150, 124);
     color: rgb(255, 203, 157);
     font-family: 'Krona One', sans-serif;
@@ -85,18 +72,7 @@
     font-family: 'Krona One', sans-serif;
 }
 
-/*.service {
-    background-color: rgb(255, 243, 200);
-    box-shadow: 0 3px 6px #00000029;
-    opacity: 1;
-    color: rgb(67, 170, 124);
-    font-weight: bold;
-}*/
-
 .serviceOptionsImg {
-    /*background-color: rgb(255, 227, 180);
-    box-shadow: 0 3px 6px #00000029;
-    opacity: 1;*/
     float: left;
     margin-right: 1.5em;
     width: 4em;
@@ -131,8 +107,8 @@
     font-family: 'Krona One', sans-serif;
 }
 .serviceLink:focus {
-    outline: none;                                         /*убирает черную рамку вокруг кнопки*/
-    background-color: rgb(67, 185, 124);        /*цвет кнопки после нажатия не изменяется*/
+    outline: none;
+    background-color: rgb(67, 185, 124);
     border: 2px solid rgb(67, 150, 124);
     color: rgb(255, 203, 157);
     font-family: 'Krona One', sans-serif;
@@ -145,7 +121,6 @@
 
 .outTxt {
     color: rgb(250, 155, 97);
-  /*  margin-left: 1.4em;*/
     text-shadow: 1px 1px 4px lightgoldenrodyellow;
     letter-spacing: 3.5px;
 }
@@ -168,5 +143,4 @@
 
 .fixation {
     position: fixed;
- /*   z-index: 999;*/
   }

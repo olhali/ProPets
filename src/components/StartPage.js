@@ -29,7 +29,6 @@ class StartPage extends React.Component {
 
     checkValidToken = async (token) => {
         try {
-            /*let token = localStorage.getItem('accessToken');*/
             const response = await fetch(`${authenticate}`, {
                 method: 'GET',
                 headers: {
@@ -39,16 +38,12 @@ class StartPage extends React.Component {
                 .then(response => {
                     console.log('before');
                     if(!response.ok){
-                        /*this.setState({
-                            showAuthorization: true
-                        })*/
                     } else {
                         window.location.replace('/main_page');
                     }
                 })
         } catch (e) {
             this.setState({
-                //error: alert("Invalid token")
                 showAuthorization: true
             })
         }
