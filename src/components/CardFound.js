@@ -251,8 +251,14 @@ class CardFound extends React.Component {
             <form name='found'>
                 {this.state.responseAfterCard ? (
                     <div>
+                        <fieldset>
+                            <legend className={style.legendCardFix}><strong>Thanks for posting!</strong></legend>
+                            <div className={`flex-container ${style.divCard}`}>
                         <p className={style.published}>Published</p>
                         <Button color='success' className={style.publishedOk} onClick={event => window.location.href='/main_page/found'}>OK</Button>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    </div>
+                    </fieldset>
                     </div>
                 ) : (
                     <div>

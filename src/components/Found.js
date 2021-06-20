@@ -86,8 +86,8 @@ class Found extends React.Component {
                             <ScrollToTop/>
                             {this.state.loading ? (
                                 <div>
-                                    <p className={style.loading}><strong>Loading</strong></p>
-                                    <div className={style.loader}>
+                                    <p className={`ml-5 ${style.loading}`}><strong>Loading</strong></p>
+                                    <div className={`ml-5 ${style.loader}`}>
                                         <BeatLoader loading size={28} color='rgb(67, 185, 124)'/>
                                     </div>
                                 </div>

@@ -103,8 +103,14 @@ class CardHotels extends React.Component {
             <form name='post'>
                 {this.state.responseAfterCard ? (
                     <div>
+                        <fieldset>
+                            <legend className={style.legendCardFix}><strong>Thanks for posting!</strong></legend>
+                            <div className={`flex-container ${style.divCard}`}>
                         <p className={style.published}>Published</p>
                         <Button color='success' className={style.publishedOk} onClick={event => window.location.href='/main_page/services/hotels'}>OK</Button>
+                                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            </div>
+                        </fieldset>
                     </div>
                 ) : (
                     <div>

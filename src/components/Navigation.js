@@ -71,8 +71,9 @@ const Navigation = (props) => {
     return (
    /*     <div id='navDivId' className='flex-container'>*/
             <div id='navDivId' className={`flex-container ${style.fixation}`}>
-            <div className={`row ${style.divHeight}`}><img className={`col-5 col-sm-6 col-md-6 col-lg-9 col-xl-11 p-0 p-sm-2 pt-xl-0 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
-            <div className={`col-6 col-sm-8 col-md-10 col-xl pl-0 pl-sm-3`}>
+            {/*<div className={`row ${style.divHeight}`}><img className={`col-5 col-sm-6 col-md-6 col-lg-9 col-xl-11 p-0 p-sm-2 pt-xl-0 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>*/}
+                <div className={`ml-sm-3 ${style.divHeight}`}><img className={`col-2 col-sm-5 col-md-6 col-lg-7 col-xl-10 pl-2 pr-1 pt-4 pl-sm-1 pr-sm-4 pl-md-3 pr-md-2 pt-md-4 pl-lg-3 pt-lg-3 pt-xl-2 pl-xl-2 pr-xl-4 ${style.topImg}`} src={require(`../Images/0.png`)} alt='ProPets'/></div>
+            <div className={`col-6 col-sm-8 col-md-10 col-xl pl-0 pr-0 pl-sm-3`}>
                 <Nav tabs vertical className={style.mainPage}>
                {/* <NavItem className={style.home}>*/}
                 <NavItem onClick={(e) => {
@@ -87,7 +88,7 @@ const Navigation = (props) => {
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink tag={RRNavLink} to='/main_page/lost' className={`pl-2 pl-sm-3 ${style.link}`}>
+                    <NavLink tag={RRNavLink} to='/main_page/lost' className={`pl-3 pl-sm-3 ${style.link}`}>
                         <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/pngwing.com.png`)} alt='Lost'/>Lost
                     </NavLink>
                 </NavItem>
@@ -98,36 +99,6 @@ const Navigation = (props) => {
                         <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/pngwing.com (5).png`)} alt='Found'/>Found
                     </NavLink>
                 </NavItem>
-            {/*    <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
-                    <DropdownToggle nav caret>
-                        <img className={style.homeImg} src={require(`../Images/18.png`)} alt='Services'/>
-                        Services
-                    </DropdownToggle>
-                    <DropdownMenu>
-                        <Link to='/main_page/services/hotels'><DropdownItem><img className={style.homeImg} src={require(`../Images/1161605.png`)} alt='Hotel'/>Hotels</DropdownItem></Link>
-                        <Link to='/main_page/services/walking'><DropdownItem><img className={style.homeImg} src={require(`../Images/walking.png`)} alt='Walking'/>Walking</DropdownItem></Link>
-                        <Link to='/main_page/services/fostering'><DropdownItem><img className={style.homeImg} src={require(`../Images/love.png`)} alt='Fostering'/>Fostering</DropdownItem></Link>
-                        <Link to='/main_page/services/vet_help'><DropdownItem><img className={style.homeImg} src={require(`../Images/PinClipart.com_clip-art-vet_1990539.png`)} alt='VetHelp'/>VetHelp</DropdownItem></Link>
-                    </DropdownMenu>
-                </Dropdown>*/}
-
-               {/* <Navbar color="faded" light>
-                    <NavbarBrand className="mr-auto"><img className={style.homeImg} src={require(`../Images/18.png`)} alt='Services'/>
-                        Services</NavbarBrand>
-                    <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-                    <Collapse isOpen={!collapsed} navbar>
-                            <NavItem>
-                                <NavLink activeClassName="active" tag={RRNavLink} to='/main_page/services/hotels'>
-                                    <img className={style.homeImg} src={require(`../Images/1161605.png`)} alt='Hotel'/>Hotels
-                                </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink activeClassName="active" tag={RRNavLink} to='/main_page/services/walking'>
-                                    <img className={style.homeImg} src={require(`../Images/walking.png`)} alt='Walking'/>Walking
-                                </NavLink>
-                            </NavItem>
-                    </Collapse>
-                </Navbar>*/}
 
                 <Button color='link' className={`pl-0 pl-sm-3 ${style.linkService}`}
                         onClick={(e) => {
@@ -162,7 +133,7 @@ const Navigation = (props) => {
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={RRNavLink} to='/main_page/services/care' className={`pl-1 pl-sm-3 ${style.serviceLink}`}>
+                            <NavLink tag={RRNavLink} to='/main_page/services/care' className={`pl-2 pl-sm-3 ${style.serviceLink}`}>
                                 <img className={`mr-5 mr-sm-4 ${style.homeImg}`} src={require(`../Images/care.png`)} alt='Care'/>Care
                             </NavLink>
                         </NavItem>
@@ -180,7 +151,7 @@ const Navigation = (props) => {
                 <NavItem onClick={(e) => {
                     setCollapseOpen(false);
                 }}>
-                    <NavLink className={`pl-0 pl-sm-3 mr-5 mr-sm-0 ${style.link1}`}>{avatar}{username}</NavLink>
+                    <NavLink className={`pl-0 pl-sm-3 pr-5 mr-sm-0 ${style.link1}`}>{avatar}{username}</NavLink>
                    {/* <NavLink tag={RRNavLink} to='/main_page/profile' className={style.link}>{avatar}{username}</NavLink>*/}
                 </NavItem>
                 <NavItem>
@@ -194,3 +165,40 @@ const Navigation = (props) => {
 };
 
 export default Navigation;
+
+
+
+
+
+
+
+/*    <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
+                    <DropdownToggle nav caret>
+                        <img className={style.homeImg} src={require(`../Images/18.png`)} alt='Services'/>
+                        Services
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <Link to='/main_page/services/hotels'><DropdownItem><img className={style.homeImg} src={require(`../Images/1161605.png`)} alt='Hotel'/>Hotels</DropdownItem></Link>
+                        <Link to='/main_page/services/walking'><DropdownItem><img className={style.homeImg} src={require(`../Images/walking.png`)} alt='Walking'/>Walking</DropdownItem></Link>
+                        <Link to='/main_page/services/fostering'><DropdownItem><img className={style.homeImg} src={require(`../Images/love.png`)} alt='Fostering'/>Fostering</DropdownItem></Link>
+                        <Link to='/main_page/services/vet_help'><DropdownItem><img className={style.homeImg} src={require(`../Images/PinClipart.com_clip-art-vet_1990539.png`)} alt='VetHelp'/>VetHelp</DropdownItem></Link>
+                    </DropdownMenu>
+                </Dropdown>*/
+
+/* <Navbar color="faded" light>
+                    <NavbarBrand className="mr-auto"><img className={style.homeImg} src={require(`../Images/18.png`)} alt='Services'/>
+                        Services</NavbarBrand>
+                    <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+                    <Collapse isOpen={!collapsed} navbar>
+                            <NavItem>
+                                <NavLink activeClassName="active" tag={RRNavLink} to='/main_page/services/hotels'>
+                                    <img className={style.homeImg} src={require(`../Images/1161605.png`)} alt='Hotel'/>Hotels
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink activeClassName="active" tag={RRNavLink} to='/main_page/services/walking'>
+                                    <img className={style.homeImg} src={require(`../Images/walking.png`)} alt='Walking'/>Walking
+                                </NavLink>
+                            </NavItem>
+                    </Collapse>
+                </Navbar>*/
